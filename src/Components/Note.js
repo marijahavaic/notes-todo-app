@@ -13,8 +13,8 @@ class Note extends React.Component {
             <div className='Header'>
                 <h3>Untitled</h3>
                 <div className='Icons'>
-                    <FontAwesomeIcon icon={faPenToSquare} />
-                    <FontAwesomeIcon icon={faTrashCan} />
+                    <FontAwesomeIcon icon={faPenToSquare} className="Icon" />
+                    <FontAwesomeIcon icon={faTrashCan} className="Icon" />
                 </div>
             </div>
             <div className='Body'>

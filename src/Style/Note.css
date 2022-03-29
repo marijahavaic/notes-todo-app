@@ -12,13 +12,36 @@
     height: 30px;
     background-color: rgba(107,170,244,1);
     text-align: left;
-    padding: 15px 0 15px 15px;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .Note .Header h3 {
     margin: 0;
     padding: 0;
     font-weight: 500;
+    color: #000;
+    opacity: 0.8;
+}
+
+.Note .Header .Icons {
+    font-size: 20px;
+    color: aliceblue;
+}
+
+.Note .Header .Icons .Icon {
+    padding-left: 8px;
+}
+
+.Note .Header .Icons .Icon:active {
+    transform: scale(0.95);
+}
+
+.Note .Header .Icons .Icon:hover {
+    color: #000;
+    opacity: 0.5;
 }
 
 .Note .Body {
