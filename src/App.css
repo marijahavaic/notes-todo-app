@@ -26,3 +26,7 @@
 .App button:active {
   transform: scale(0.95);
 }
+
+.App button:hover {
+  color: rgba(107,170,244,1);
+}
