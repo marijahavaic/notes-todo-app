@@ -7,8 +7,16 @@
   background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(2,0,36,0.896796218487395) 0%, rgba(212,212,240,1) 58%, rgba(244,184,0,1) 94%); */
   /* background: rgb(2,0,36);
   background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(2,0,36,0.896796218487395) 0%, rgba(212,212,240,1) 58%, rgba(0,202,244,1) 94%); */
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
 }
 
 .App button {
-  
+  border: none;
+  margin: 15px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: rgba(250,184,213,1);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
