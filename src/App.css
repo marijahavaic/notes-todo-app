@@ -8,6 +8,12 @@
   /* background: rgb(2,0,36);
   background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(2,0,36,0.896796218487395) 0%, rgba(212,212,240,1) 58%, rgba(0,202,244,1) 94%); */
   display: flex;
+  flex-direction: column;  
+  padding: 0 15px;
+}
+
+.App .Buttons {
+  display: flex;
   justify-content: flex-end;
   align-items: flex-start;
 }
@@ -29,4 +35,8 @@
 
 .App button:hover {
   color: rgba(107,170,244,1);
+}
+
+.App .Notes {
+  display: flex;
 }

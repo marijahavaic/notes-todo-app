@@ -1,0 +1,27 @@
+.Note 
+{
+    width: 300px;
+    height: 400px;
+    margin: 15px;
+    background-color: aliceblue;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.Note .Header {
+    height: 30px;
+    background-color: rgba(107,170,244,1);
+    text-align: left;
+    padding: 15px 0 15px 15px;
+}
+
+.Note .Header h3 {
+    margin: 0;
+    padding: 0;
+    font-weight: 500;
+}
+
+.Note .Body {
+    margin: 0 16px;
+    text-align: justify;
+}

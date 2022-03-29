@@ -7,14 +7,20 @@ import './App.css';
 class App extends React.Component {
   
   createNote() {
-    <Note />
+    
   }
 
   render() {
     return (
       <div className="App">
-        <button onClick={this.createNote}>+ Add Note</button>
-        <button>+ Add Todo</button>
+        <div className='Buttons'>
+          <button onClick={this.createNote}>+ Add Note</button>
+          <button>+ Add Todo</button>
+        </div>
+        <div className='Notes'>
+          <Note />
+          <Note />
+        </div>
       </div>
     );
     }
