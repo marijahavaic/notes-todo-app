@@ -1,12 +1,23 @@
+import React from 'react';
+
+import Note from './Components/Note';
+
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <button>+ Add Note</button>
-      <button>+ Add Todo</button>
-    </div>
-  );
+class App extends React.Component {
+  
+  createNote() {
+    <Note />
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <button onClick={this.createNote}>+ Add Note</button>
+        <button>+ Add Todo</button>
+      </div>
+    );
+    }
 }
 
 export default App;
