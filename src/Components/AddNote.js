@@ -3,21 +3,21 @@ import '../Style/Note.css'
 const AddNote = () => {
     return(
         <div className="Note">
-            <div className='Note-header'>
+            <div className='Header'>
                 <textarea
-                    rows={2}
-                    cols={20}
+                    rows={1}
+                    cols={31}
                     placeholder="Untitled"
                 ></textarea>
             </div>
-            <div className='Note-text'>
+            <div className='Body'>
                 <textarea 
-                    rows={15}
-                    cols={20}
+                    rows={11}
+                    cols={31}
                     placeholder="Type to add a note"
                 ></textarea>
             </div>
-            <div className='Note-footer'>
+            <div className='Footer'>
                 <small>300 Remaining</small>
                 <button className='save'>Save</button>
             </div>

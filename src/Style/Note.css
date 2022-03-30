@@ -8,6 +8,18 @@
     font-family: 'Poppins', sans-serif;
 }
 
+textarea {
+    border: none;
+    resize: none;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+textarea:placeholder-shown {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+}
+
 .Note .Header {
     height: 30px;
     background-color: rgba(107,170,244,1);
@@ -16,6 +28,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.Note .Header textarea {
+    background-color: rgba(107,170,244,1);
+    font-size: 18.72px;
 }
 
 .Note .Header h3 {
@@ -47,4 +64,20 @@
 .Note .Body {
     margin: 0 16px;
     text-align: justify;
+}
+
+.Note .Body textarea {
+    margin: 16px 0 0 0;
+    text-align: justify;
+}
+
+.Note .Footer {
+    margin: 0 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.Note .Footer button {
+    margin: 0;
 }
