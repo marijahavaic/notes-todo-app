@@ -3,6 +3,7 @@ import {nanoid} from 'nanoid';
 
 import './App.css';
 import NotesList from './Components/NotesList';
+import AddNote from './Components/AddNote'
 
 function App() {
   
@@ -32,6 +33,7 @@ function App() {
         </div>
         <div className='Notes'>
           <NotesList notes={notes} />
+          <AddNote />
         </div>
       </div>
     );
