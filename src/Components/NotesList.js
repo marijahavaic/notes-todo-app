@@ -2,7 +2,7 @@ import React from 'react';
 
 import Note from './Note';
 
-// import '../Style/NoteList.css';
+import '../Style/NotesList.css';
 
 class NoteList extends React.Component {
     
@@ -11,6 +11,7 @@ class NoteList extends React.Component {
         <div className="NoteList">
             <Note />
             <Note /> 
+            <Note />
             <Note />
         </div>
         )
