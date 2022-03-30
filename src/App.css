@@ -19,6 +19,7 @@
 }
 
 .App button {
+  cursor: pointer;
   border: none;
   margin: 15px;
   padding: 10px;

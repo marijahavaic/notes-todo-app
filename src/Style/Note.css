@@ -13,6 +13,11 @@ textarea {
     resize: none;
     font-family: inherit;
     font-size: inherit;
+    background-color: aliceblue;
+}
+
+textarea:focus {
+    outline: none;
 }
 
 textarea:placeholder-shown {
