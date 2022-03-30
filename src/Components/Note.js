@@ -7,7 +7,7 @@ import { faPenToSquare, faTrashCan } from '@fortawesome/free-solid-svg-icons';
 
 const Note = ({ id, title, text }) => {
         return (
-        <div className="Note">
+        <div className="Note" key={id}>
             <div className='Header'>
                 <h3>{title}</h3>
                 <div className='Icons'>

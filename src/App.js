@@ -6,7 +6,7 @@ import NotesList from './Components/NotesList';
 import AddNote from './Components/AddNote'
 
 function App() {
-  
+  // const [newNote, setNewNotes] = useState([]);  
   const [notes, setNotes] = useState([
     {
     id: nanoid(),
@@ -35,6 +35,11 @@ function App() {
     setNotes(newNotes);
   }
 
+  // const addNoteComponent = (e) => {
+  //   setNewNotes(<AddNote handleAddNote={addNote} />);
+  //   console.log('log')
+  // }
+
     return (
       <div className="App">
         <div className='Buttons'>
@@ -42,8 +47,7 @@ function App() {
           <button>+ Add Todo</button>
         </div>
         <div className='Notes'>
-          <NotesList notes={notes} />
-          <AddNote handleAddNote={addNote} />
+          <NotesList notes={notes} handleAddNote={addNote} />
         </div>
       </div>
     );
