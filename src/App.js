@@ -33,6 +33,7 @@ function App() {
     }
     const newNotes = [ newNote, ...notes];
     setNotes(newNotes);
+    setNewNotes(false);
   };
 
   const addNoteComponent = (e) => {

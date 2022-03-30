@@ -51,6 +51,7 @@ textarea:placeholder-shown {
 .Icon {
     font-size: 20px;
     color: aliceblue;
+    cursor: pointer;
 }
 
 .Note .Header .Icons .Icon {
@@ -87,7 +88,18 @@ textarea:placeholder-shown {
     margin: 0;
 }
 
-.Note .New {
-    transition: all 5s ease-in-out;
+.NewNoteBg {
     position: fixed;
+    background-color: rgba(0, 0, 0, 0.7);
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+}
+
+.New {
+    position: relative;
+    margin: 150px auto;
+    transition: all 5s ease-in-out;
+    z-index: 1;
 }

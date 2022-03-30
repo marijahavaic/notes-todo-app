@@ -31,29 +31,31 @@ const AddNote = ({ handleAddNote }) => {
     }
 
     return(
-        <div className="Note New">
-            <div className='Header'>
-                <textarea
-                    rows={1}
-                    cols={28}
-                    placeholder="New Note"
-                    value={noteTitle}
-                    onChange={handleTitleChange}
-                ></textarea>
-                <FontAwesomeIcon icon={faClose} className="Icon" />
-            </div>
-            <div className='Body'>
-                <textarea 
-                    rows={11}
-                    cols={31}
-                    placeholder="Type to add a note"
-                    value={noteText}
-                    onChange={handleTextChange}
-                ></textarea>
-            </div>
-            <div className='Footer'>
-                <small>300 Remaining</small>
-                <button className='save' onClick={handleSaveClick}>Save</button>
+        <div className='NewNoteBg'>
+            <div className="Note New">
+                <div className='Header'>
+                    <textarea
+                        rows={1}
+                        cols={28}
+                        placeholder="New Note"
+                        value={noteTitle}
+                        onChange={handleTitleChange}
+                    ></textarea>
+                    <FontAwesomeIcon icon={faClose} className="Icon" />
+                </div>
+                <div className='Body'>
+                    <textarea 
+                        rows={11}
+                        cols={31}
+                        placeholder="Type to add a note"
+                        value={noteText}
+                        onChange={handleTextChange}
+                    ></textarea>
+                </div>
+                <div className='Footer'>
+                    <small>300 Remaining</small>
+                    <button className='save' onClick={handleSaveClick}>Save</button>
+                </div>
             </div>
         </div>
     )
