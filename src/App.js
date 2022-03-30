@@ -25,6 +25,16 @@ function App() {
     }
 ]);
 
+  const addNote = (title, text) => {
+    const newNote = {
+      id: nanoid(),
+      title: title,
+      text: text,
+    }
+    const newNotes = [ newNote, ...notes];
+    setNotes(newNotes);
+  }
+
     return (
       <div className="App">
         <div className='Buttons'>
@@ -33,7 +43,7 @@ function App() {
         </div>
         <div className='Notes'>
           <NotesList notes={notes} />
-          <AddNote />
+          <AddNote handleAddNote={addNote} />
         </div>
       </div>
     );
