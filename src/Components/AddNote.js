@@ -6,16 +6,25 @@ const AddNote = ({ handleAddNote }) => {
     const [noteTitle, setNoteTitle] = useState('');
     const [noteText, setNoteText] = useState('');
 
+    // set note title
     const handleTitleChange = (e) => {
         setNoteTitle(e.target.value);
     }
 
+    // set note text
     const handleTextChange = (e) => {
         setNoteText(e.target.value);
     }
 
+    // save note with calling addNote function from App.js
     const handleSaveClick = () => {
-        handleAddNote(noteTitle, noteText)
+        // check if the note isn't empty
+        if(noteText.trim().length > 0) {
+            handleAddNote(noteTitle, noteText);
+            // Clear input areas
+            setNoteTitle('');
+            setNoteText('');
+        }
     }
 
     return(
