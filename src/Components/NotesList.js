@@ -4,18 +4,14 @@ import Note from './Note';
 
 import '../Style/NotesList.css';
 
-class NoteList extends React.Component {
-    
-    render() { 
-        return (
-        <div className="NoteList">
-            <Note />
-            <Note /> 
-            <Note />
-            <Note />
+const NotesList = ({ notes }) => {
+    return (
+        <div className="NotesList">
+            {notes.map((note) => (
+                <Note id={note.id} title={note.title} text={note.text} />
+            ))}
         </div>
-        )
-    }
+    )
 }
 
-export default NoteList;
+export default NotesList;

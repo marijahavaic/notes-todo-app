@@ -5,24 +5,21 @@ import '../Style/Note.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPenToSquare, faTrashCan } from '@fortawesome/free-solid-svg-icons';
 
-class Note extends React.Component {
-    
-    render() { 
+const Note = ({ id, title, text }) => {
         return (
         <div className="Note">
             <div className='Header'>
-                <h3>Untitled</h3>
+                <h3>{title}</h3>
                 <div className='Icons'>
                     <FontAwesomeIcon icon={faPenToSquare} className="Icon" />
                     <FontAwesomeIcon icon={faTrashCan} className="Icon" />
                 </div>
             </div>
             <div className='Body'>
-                <p>Here's some text...</p>
+                <p>{text}</p>
             </div>
         </div>
         )
-    }
 }
 
 export default Note;
