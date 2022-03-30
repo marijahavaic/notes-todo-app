@@ -1,14 +1,13 @@
 import React from 'react';
 
-import Note from './Components/Note';
-
 import './App.css';
+import NoteList from './Components/NotesList';
 
 class App extends React.Component {
   
-  createNote() {
+  // createNote() {
     
-  }
+  // }
 
   render() {
     return (
@@ -18,8 +17,7 @@ class App extends React.Component {
           <button>+ Add Todo</button>
         </div>
         <div className='Notes'>
-          <Note />
-          <Note />
+          <NoteList />
         </div>
       </div>
     );
