@@ -6,7 +6,7 @@ import NotesList from './Components/NotesList';
 import AddNote from './Components/AddNote'
 
 function App() {
-  // const [newNote, setNewNotes] = useState([]);  
+  const [newNote, setNewNotes] = useState(false);  
   const [notes, setNotes] = useState([
     {
     id: nanoid(),
@@ -33,21 +33,21 @@ function App() {
     }
     const newNotes = [ newNote, ...notes];
     setNotes(newNotes);
-  }
+  };
 
-  // const addNoteComponent = (e) => {
-  //   setNewNotes(<AddNote handleAddNote={addNote} />);
-  //   console.log('log')
-  // }
+  const addNoteComponent = (e) => {
+    setNewNotes(!newNote);
+  }
 
     return (
       <div className="App">
         <div className='Buttons'>
-          <button>+ Add Note</button>
+          <button onClick={addNoteComponent}>+ Add Note</button>
           <button>+ Add Todo</button>
         </div>
         <div className='Notes'>
-          <NotesList notes={notes} handleAddNote={addNote} />
+          {newNote && <AddNote handleAddNote={addNote} newNote={newNote} />}
+          <NotesList notes={notes} handleAddNote={addNote} newNote={newNote} />
         </div>
       </div>
     );

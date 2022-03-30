@@ -5,11 +5,10 @@ import AddNote from './AddNote';
 
 import '../Style/NotesList.css';
 
-const NotesList = ({ notes, handleAddNote }) => {
+const NotesList = ({ notes}) => {
     return (
         <div className="NotesList">
-            <AddNote handleAddNote={handleAddNote} />
-            {notes.map((note) => (
+                {notes.map((note) => (
                 <Note id={note.id} title={note.title} text={note.text} />
             ))}
         </div>

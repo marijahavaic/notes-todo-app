@@ -1,6 +1,9 @@
 import { useState } from 'react';
 
-import '../Style/Note.css'
+import '../Style/Note.css';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faClose } from '@fortawesome/free-solid-svg-icons';
 
 const AddNote = ({ handleAddNote }) => {
     const [noteTitle, setNoteTitle] = useState('');
@@ -28,15 +31,16 @@ const AddNote = ({ handleAddNote }) => {
     }
 
     return(
-        <div className="Note">
+        <div className="Note New">
             <div className='Header'>
                 <textarea
                     rows={1}
-                    cols={31}
-                    placeholder="Untitled"
+                    cols={28}
+                    placeholder="New Note"
                     value={noteTitle}
                     onChange={handleTitleChange}
                 ></textarea>
+                <FontAwesomeIcon icon={faClose} className="Icon" />
             </div>
             <div className='Body'>
                 <textarea 

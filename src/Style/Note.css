@@ -48,7 +48,7 @@ textarea:placeholder-shown {
     opacity: 0.8;
 }
 
-.Note .Header .Icons {
+.Icon {
     font-size: 20px;
     color: aliceblue;
 }
@@ -57,11 +57,11 @@ textarea:placeholder-shown {
     padding-left: 8px;
 }
 
-.Note .Header .Icons .Icon:active {
+.Icon:active {
     transform: scale(0.95);
 }
 
-.Note .Header .Icons .Icon:hover {
+.Icon:hover {
     color: #000;
     opacity: 0.5;
 }
@@ -85,4 +85,9 @@ textarea:placeholder-shown {
 
 .Note .Footer button {
     margin: 0;
+}
+
+.Note .New {
+    transition: all 5s ease-in-out;
+    position: fixed;
 }
