@@ -4,6 +4,7 @@ import { nanoid } from 'nanoid';
 import './App.css';
 import NotesList from './Components/NotesList';
 import AddNote from './Components/AddNote'
+import Search from './Components/Search';
 
 function App() {
   const [newNote, setNewNotes] = useState(false);
@@ -51,9 +52,12 @@ function App() {
 
   return (
     <div className="App">
-      <div className='Buttons'>
-        <button onClick={addNoteComponent}>+ Add Note</button>
-        <button>+ Add Todo</button>
+      <div className='Header'>
+        <Search />
+        <div className='Buttons'>
+          <button onClick={addNoteComponent}>+ Add Note</button>
+          <button>+ Add Todo</button>
+        </div>
       </div>
       <div className='Notes'>
         {newNote && <AddNote
