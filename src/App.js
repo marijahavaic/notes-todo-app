@@ -7,6 +7,7 @@ import AddNote from './Components/AddNote'
 import Search from './Components/Search';
 
 function App() {
+  const [searchText, setSearchText] = useState('');
   const [newNote, setNewNotes] = useState(false);
   const [notes, setNotes] = useState([
     {
@@ -53,7 +54,7 @@ function App() {
   return (
     <div className="App">
       <div className='Header'>
-        <Search />
+        <Search handleSearchNote={setSearchText} />
         <div className='Buttons'>
           <button onClick={addNoteComponent}>+ Add Note</button>
           <button>+ Add Todo</button>
@@ -66,7 +67,7 @@ function App() {
           handleCloseNewNote={closeNewNote}
         />}
         <NotesList
-          notes={notes}
+          notes={notes.filter((note) => note.text.toLowerCase().includes(searchText))}
           handleAddNote={addNote}
           handleDeleteNote={deleteNote}
           newNote={newNote} />
