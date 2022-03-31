@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { nanoid } from 'nanoid';
 
 import './App.css';
 import NotesList from './Components/NotesList';
 import AddNote from './Components/AddNote';
 import Header from './Components/Header';
-
 
 function App() {
   const [searchText, setSearchText] = useState('');
@@ -29,6 +28,22 @@ function App() {
   ]);
 
   const [darkMode, setDarkMode] = useState(false);
+
+  useEffect(() => {
+    const savedNotes = JSON.parse(
+      localStorage.getItem('react-notes-todo-app-data')
+    );
+
+    if (savedNotes) {
+      setNotes(savedNotes);
+    }
+  }, [])
+
+  // Storing note data in local storage
+  useEffect(() => {
+    localStorage.setItem('react-notes-todo-app-data', JSON.stringify(notes)
+    );
+  }, [notes]);
 
   const addNote = (title, text) => {
     const newNote = {
