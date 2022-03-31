@@ -8,12 +8,22 @@
     font-family: 'Poppins', sans-serif;
 }
 
+.DarkMode .Note {
+    background-color: rgb(34, 34, 34);
+    color: rgb(205, 215, 224);
+}
+
 textarea {
     border: none;
     resize: none;
     font-family: inherit;
     font-size: inherit;
     background-color: aliceblue;
+}
+
+.DarkMode textarea {
+    background-color: rgb(34, 34, 34);
+    color: rgb(205, 215, 224);
 }
 
 textarea:focus {
@@ -23,6 +33,10 @@ textarea:focus {
 textarea:placeholder-shown {
     font-family: 'Poppins', sans-serif;
     font-size: 16px;
+}
+
+.DarkMode textarea::placeholder {
+    color: rgb(205, 215, 224);
 }
 
 .Note .NoteHeader {
@@ -35,9 +49,17 @@ textarea:placeholder-shown {
     align-items: center;
 }
 
+.DarkMode .Note .NoteHeader {
+    background-color: rgb(65, 93, 126);
+}
+
 .Note .NoteHeader textarea {
     background-color: rgba(107,170,244,1);
     font-size: 18.72px;
+}
+
+.DarkMode .Note .NoteHeader textarea {
+    background-color: rgb(65, 93, 126);
 }
 
 .Note .NoteHeader h3 {
@@ -48,10 +70,19 @@ textarea:placeholder-shown {
     opacity: 0.8;
 }
 
+.DarkMode .NoteHeader h3 {
+    color: rgb(205, 215, 224);
+    font-weight: 400;
+}
+
 .Icon {
     font-size: 20px;
     color: aliceblue;
     cursor: pointer;
+}
+
+.DarkMode .Icon {
+    color: rgb(205, 215, 224);
 }
 
 .Note .NoteHeader .Icons .Icon {
@@ -107,5 +138,4 @@ textarea:placeholder-shown {
 
 button .Close {
     cursor: pointer;
-    background-color: #000;
 }

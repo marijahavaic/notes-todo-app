@@ -4,10 +4,6 @@
   height: auto;
   background: rgb(250,184,213);
   background: linear-gradient(7deg, rgba(250,184,213,1) 0%, rgba(107,170,244,1) 100%);
-  /* background: rgb(2,0,36);
-  background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(2,0,36,0.896796218487395) 0%, rgba(212,212,240,1) 58%, rgba(244,184,0,1) 94%); */
-  /* background: rgb(2,0,36);
-  background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(2,0,36,0.896796218487395) 0%, rgba(212,212,240,1) 58%, rgba(0,202,244,1) 94%); */
   display: flex;
   flex-direction: column;  
   padding: 0 15px;
@@ -17,7 +13,10 @@
   text-align: center;
   min-height: 100vh;
   height: auto;
-  background-color: #121212;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  flex-direction: column;  
+  padding: 0 15px;
 }
 
 .Buttons {
@@ -38,12 +37,20 @@
   font-weight: 600;
 }
 
+.DarkMode button {
+  background-color: rgb(180, 134, 154);
+}
+
 button:active {
   transform: scale(0.95);
 }
 
 button:hover {
   color: rgba(107,170,244,1);
+}
+
+.DarkMode button:hover {
+  background-color: rgba(107,170,244,0.5);
 }
 
 .Notes {
@@ -70,7 +77,7 @@ button:hover {
 
 .DarkMode .HeaderTitle h1 {
   margin: auto auto auto 31px;
-  color: rgba(0, 0, 0, 0.3);
+  color: rgb(205, 215, 224);
   font-size: 50px;
 }
 
@@ -92,6 +99,10 @@ button:hover {
   align-self: center;
 }
 
+.DarkMode .Header .Search {
+  background-color: rgb(34, 34, 34);;
+}
+
 .Header .Search input {
   border: none;
   background-color: transparent;
@@ -99,9 +110,18 @@ button:hover {
   font-size: 18px;
 }
 
+.DarkMode .Header .Search input {
+  background-color: transparent;
+  color: rgb(34, 34, 34);
+}
+
 .Header .Search input::placeholder {
   color: aliceblue;
   font-size: 18px;
+}
+
+.DarkMode .Search input::placeholder {
+  color: rgb(205, 215, 224);
 }
 
 .Header .Search input:focus {
