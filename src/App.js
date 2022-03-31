@@ -1,17 +1,17 @@
-import React, {useState} from 'react';
-import {nanoid} from 'nanoid';
+import React, { useState } from 'react';
+import { nanoid } from 'nanoid';
 
 import './App.css';
 import NotesList from './Components/NotesList';
 import AddNote from './Components/AddNote'
 
 function App() {
-  const [newNote, setNewNotes] = useState(false);  
+  const [newNote, setNewNotes] = useState(false);
   const [notes, setNotes] = useState([
     {
-    id: nanoid(),
-    title: "First note",
-    text: "This is my first note..."
+      id: nanoid(),
+      title: "First note",
+      text: "This is my first note..."
     },
     {
       id: nanoid(),
@@ -23,7 +23,7 @@ function App() {
       title: "Third note",
       text: "This is my third note..."
     }
-]);
+  ]);
 
   const addNote = (title, text) => {
     const newNote = {
@@ -31,7 +31,7 @@ function App() {
       title: title,
       text: text,
     }
-    const newNotes = [ newNote, ...notes];
+    const newNotes = [newNote, ...notes];
     setNotes(newNotes);
     setNewNotes(false);
   };
@@ -40,18 +40,35 @@ function App() {
     setNewNotes(!newNote);
   }
 
-    return (
-      <div className="App">
-        <div className='Buttons'>
-          <button onClick={addNoteComponent}>+ Add Note</button>
-          <button>+ Add Todo</button>
-        </div>
-        <div className='Notes'>
-          {newNote && <AddNote handleAddNote={addNote} newNote={newNote} />}
-          <NotesList notes={notes} handleAddNote={addNote} newNote={newNote} />
-        </div>
+  const deleteNote = (id) => {
+    const newNotes = notes.filter((note) => note.id !== id);
+    setNotes(newNotes);
+  }
+
+  const closeNewNote = () => {
+    setNewNotes(false);
+  }
+
+  return (
+    <div className="App">
+      <div className='Buttons'>
+        <button onClick={addNoteComponent}>+ Add Note</button>
+        <button>+ Add Todo</button>
       </div>
-    );
+      <div className='Notes'>
+        {newNote && <AddNote
+          handleAddNote={addNote}
+          newNote={newNote}
+          handleCloseNewNote={closeNewNote}
+        />}
+        <NotesList
+          notes={notes}
+          handleAddNote={addNote}
+          handleDeleteNote={deleteNote}
+          newNote={newNote} />
+      </div>
+    </div>
+  );
 }
 
 export default App;

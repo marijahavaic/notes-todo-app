@@ -3,6 +3,6 @@
     display: flex;
     margin: 16px;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
 }

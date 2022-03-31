@@ -5,7 +5,7 @@ import '../Style/Note.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClose } from '@fortawesome/free-solid-svg-icons';
 
-const AddNote = ({ handleAddNote }) => {
+const AddNote = ({ newNote, handleAddNote, handleCloseNewNote }) => {
     const [noteTitle, setNoteTitle] = useState('');
     const [noteText, setNoteText] = useState('');
 
@@ -22,7 +22,7 @@ const AddNote = ({ handleAddNote }) => {
     // save note with calling addNote function from App.js
     const handleSaveClick = () => {
         // check if the note isn't empty
-        if(noteText.trim().length > 0) {
+        if (noteText.trim().length > 0) {
             handleAddNote(noteTitle, noteText);
             // Clear input areas
             setNoteTitle('');
@@ -30,7 +30,7 @@ const AddNote = ({ handleAddNote }) => {
         }
     }
 
-    return(
+    return (
         <div className='NewNoteBg'>
             <div className="Note New">
                 <div className='Header'>
@@ -41,10 +41,10 @@ const AddNote = ({ handleAddNote }) => {
                         value={noteTitle}
                         onChange={handleTitleChange}
                     ></textarea>
-                    <FontAwesomeIcon icon={faClose} className="Icon" />
+                    <FontAwesomeIcon icon={faClose} className="Icon" onClick={handleCloseNewNote} />
                 </div>
                 <div className='Body'>
-                    <textarea 
+                    <textarea
                         rows={11}
                         cols={31}
                         placeholder="Type to add a note"

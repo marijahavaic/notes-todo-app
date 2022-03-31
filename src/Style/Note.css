@@ -103,3 +103,8 @@ textarea:placeholder-shown {
     transition: all 5s ease-in-out;
     z-index: 1;
 }
+
+button .Close {
+    cursor: pointer;
+    background-color: #000;
+}

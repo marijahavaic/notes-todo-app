@@ -1,15 +1,19 @@
 import React from 'react';
 
 import Note from './Note';
-import AddNote from './AddNote';
 
 import '../Style/NotesList.css';
 
-const NotesList = ({ notes}) => {
+const NotesList = ({ notes, handleDeleteNote }) => {
     return (
         <div className="NotesList">
-                {notes.map((note) => (
-                <Note id={note.id} title={note.title} text={note.text} />
+            {notes.map((note) => (
+                <Note
+                    id={note.id}
+                    title={note.title}
+                    text={note.text}
+                    handleDeleteNote={handleDeleteNote}
+                />
             ))}
         </div>
     )
