@@ -2,14 +2,21 @@ import React from "react";
 
 import Search from './Search';
 
-const Header = ({ handleAddNote, handleSearchNote, handleToggleDarkMode }) => {
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
+
+import '../App.css';
+
+const Header = ({ handleAddNote, handleSearchNote, handleToggleDarkMode, isDark }) => {
     return (
         <div className='Header'>
             <div className='HeaderTitle'>
                 <h1>Notes and Todo</h1>
-                <button
+                <button className="DarkMoodToggler"
                     onClick={() =>
-                        handleToggleDarkMode((prevDarkMode) => !prevDarkMode)}>Toggle style</button>
+                        handleToggleDarkMode((prevDarkMode) => !prevDarkMode)}>
+                    {isDark ? <div className="LightButton">Light Mode  <FontAwesomeIcon icon={faSun} className="Icon" style={{ marginLeft: '3px' }} /></div> : <div className="DarkButton">Dark Mode <FontAwesomeIcon icon={faMoon} className="Icon" style={{ marginLeft: '3px' }} /></div>}
+                </button>
             </div>
             <div className='HeaderBody'>
                 <Search handleSearchNote={handleSearchNote} />

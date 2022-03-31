@@ -100,7 +100,7 @@ button:hover {
 }
 
 .DarkMode .Header .Search {
-  background-color: rgb(34, 34, 34);;
+  background-color: rgb(34, 34, 34);
 }
 
 .Header .Search input {
@@ -112,7 +112,7 @@ button:hover {
 
 .DarkMode .Header .Search input {
   background-color: transparent;
-  color: rgb(34, 34, 34);
+  color: rgb(205, 215, 224);
 }
 
 .Header .Search input::placeholder {
@@ -127,5 +127,51 @@ button:hover {
 .Header .Search input:focus {
   outline: none;
 }
+/* 
+.Header .HeaderTitle button {
+  background-color: rgba(107,170,244,1);
+  margin-right: 20px;
+}
+
+.Header .HeaderTitle button:hover {
+  color: rgb(255, 255, 255);
+}
+
+.DarkMode .Header .HeaderTitle button {
+  background-color: rgb(34, 34, 34);
+  color: rgb(255, 255, 255);
+  text-align: justify;
+}
+
+.Header .HeaderTitle button {
+  color: aliceblue;
+}
+
+.Header .HeaderTitle button:hover {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.DarkMode .Header .HeaderTitle button:hover {
+  color: rgb(205, 215, 224);
+} */
 
 
+.LightButton {
+  color: rgb(205, 215, 224);
+}
+
+.LightButton .Icon:hover {
+  color: inherit;
+}
+
+.DarkButton {
+  color: #000;
+}
+
+.DarkButton .Icon {
+  color: #000;
+}
+
+.DarkButton:hover {
+  color: rgba(0,0,0,0.5);
+}

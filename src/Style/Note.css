@@ -94,8 +94,7 @@ textarea:placeholder-shown {
 }
 
 .Icon:hover {
-    color: #000;
-    opacity: 0.5;
+    color: rgba(0, 0, 0, 0.5);
 }
 
 .Note .NoteBody {

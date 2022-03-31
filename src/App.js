@@ -56,7 +56,12 @@ function App() {
 
   return (
     <div className={`${darkMode ? 'DarkMode' : 'App'}`}>
-      <Header handleAddNote={addNoteComponent} handleSearchNote={setSearchText} handleToggleDarkMode={setDarkMode} />
+      <Header
+        handleAddNote={addNoteComponent}
+        handleSearchNote={setSearchText}
+        handleToggleDarkMode={setDarkMode}
+        isDark={darkMode}
+      />
       <div className='Notes'>
         {newNote && <AddNote
           handleAddNote={addNote}
