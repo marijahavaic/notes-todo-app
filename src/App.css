@@ -13,13 +13,20 @@
   padding: 0 15px;
 }
 
-.App .Buttons {
+.DarkMode {
+  text-align: center;
+  min-height: 100vh;
+  height: auto;
+  background-color: #121212;
+}
+
+.Buttons {
   display: flex;
   justify-content: flex-end;
   align-items: flex-start;
 }
 
-.App button {
+ button {
   cursor: pointer;
   border: none;
   margin: 15px;
@@ -31,19 +38,43 @@
   font-weight: 600;
 }
 
-.App button:active {
+button:active {
   transform: scale(0.95);
 }
 
-.App button:hover {
+button:hover {
   color: rgba(107,170,244,1);
 }
 
-.App .Notes {
+.Notes {
   display: flex;
 }
 
 .Header {
+  display: flex;
+  flex-direction: column;
+}
+
+.HeaderTitle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+.App .HeaderTitle h1 {
+  margin: auto auto auto 31px;
+  color: aliceblue;
+  font-size: 50px;
+}
+
+.DarkMode .HeaderTitle h1 {
+  margin: auto auto auto 31px;
+  color: rgba(0, 0, 0, 0.3);
+  font-size: 50px;
+}
+
+.HeaderBody {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -76,3 +107,5 @@
 .Header .Search input:focus {
   outline: none;
 }
+
+

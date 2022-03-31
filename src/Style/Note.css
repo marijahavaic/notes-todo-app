@@ -25,7 +25,7 @@ textarea:placeholder-shown {
     font-size: 16px;
 }
 
-.Note .Header {
+.Note .NoteHeader {
     height: 30px;
     background-color: rgba(107,170,244,1);
     text-align: left;
@@ -35,12 +35,12 @@ textarea:placeholder-shown {
     align-items: center;
 }
 
-.Note .Header textarea {
+.Note .NoteHeader textarea {
     background-color: rgba(107,170,244,1);
     font-size: 18.72px;
 }
 
-.Note .Header h3 {
+.Note .NoteHeader h3 {
     margin: 0;
     padding: 0;
     font-weight: 500;
@@ -54,7 +54,7 @@ textarea:placeholder-shown {
     cursor: pointer;
 }
 
-.Note .Header .Icons .Icon {
+.Note .NoteHeader .Icons .Icon {
     padding-left: 8px;
 }
 
@@ -67,24 +67,24 @@ textarea:placeholder-shown {
     opacity: 0.5;
 }
 
-.Note .Body {
+.Note .NoteBody {
     margin: 0 16px;
     text-align: justify;
 }
 
-.Note .Body textarea {
+.Note .NoteBody textarea {
     margin: 16px 0 0 0;
     text-align: justify;
 }
 
-.Note .Footer {
+.Note .NoteFooter {
     margin: 0 15px;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.Note .Footer button {
+.Note .NoteFooter button {
     margin: 0;
 }
 
@@ -95,13 +95,14 @@ textarea:placeholder-shown {
     top: 0;
     width: 100%;
     height: 100vh;
+    z-index: 1;
 }
 
-.New {
+.NewNote {
+    z-index: 2;
     position: relative;
     margin: 150px auto;
-    transition: all 5s ease-in-out;
-    z-index: 1;
+    /* transition: all 5s ease-in-out; */
 }
 
 button .Close {

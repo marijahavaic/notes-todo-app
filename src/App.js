@@ -3,8 +3,9 @@ import { nanoid } from 'nanoid';
 
 import './App.css';
 import NotesList from './Components/NotesList';
-import AddNote from './Components/AddNote'
-import Search from './Components/Search';
+import AddNote from './Components/AddNote';
+import Header from './Components/Header';
+
 
 function App() {
   const [searchText, setSearchText] = useState('');
@@ -26,6 +27,8 @@ function App() {
       text: "This is my third note..."
     }
   ]);
+
+  const [darkMode, setDarkMode] = useState(false);
 
   const addNote = (title, text) => {
     const newNote = {
@@ -52,14 +55,8 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <div className='Header'>
-        <Search handleSearchNote={setSearchText} />
-        <div className='Buttons'>
-          <button onClick={addNoteComponent}>+ Add Note</button>
-          <button>+ Add Todo</button>
-        </div>
-      </div>
+    <div className={`${darkMode ? 'DarkMode' : 'App'}`}>
+      <Header handleAddNote={addNoteComponent} handleSearchNote={setSearchText} handleToggleDarkMode={setDarkMode} />
       <div className='Notes'>
         {newNote && <AddNote
           handleAddNote={addNote}

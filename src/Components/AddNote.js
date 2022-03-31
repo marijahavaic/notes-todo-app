@@ -32,8 +32,8 @@ const AddNote = ({ newNote, handleAddNote, handleCloseNewNote }) => {
 
     return (
         <div className='NewNoteBg'>
-            <div className="Note New">
-                <div className='Header'>
+            <div className="Note NewNote">
+                <div className='NoteHeader'>
                     <textarea
                         rows={1}
                         cols={28}
@@ -43,7 +43,7 @@ const AddNote = ({ newNote, handleAddNote, handleCloseNewNote }) => {
                     ></textarea>
                     <FontAwesomeIcon icon={faClose} className="Icon" onClick={handleCloseNewNote} />
                 </div>
-                <div className='Body'>
+                <div className='NoteBody'>
                     <textarea
                         rows={11}
                         cols={31}
@@ -52,7 +52,7 @@ const AddNote = ({ newNote, handleAddNote, handleCloseNewNote }) => {
                         onChange={handleTextChange}
                     ></textarea>
                 </div>
-                <div className='Footer'>
+                <div className='NoteFooter'>
                     <small>300 Remaining</small>
                     <button className='save' onClick={handleSaveClick}>Save</button>
                 </div>
