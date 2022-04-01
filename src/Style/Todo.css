@@ -1,0 +1,116 @@
+.Todo {
+    width: 300px;
+    height: 400px;
+    margin: 15px;
+    background-color: aliceblue;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.DarkMode .Todo {
+    background-color: rgb(34, 34, 34);
+    color: rgb(205, 215, 224);
+}
+
+.Todo .TodoHeader {
+    height: 30px;
+    background-color: rgba(107,170,244,1);
+    text-align: left;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.DarkMode .Todo .TodoHeader {
+    background-color: rgb(65, 93, 126);
+}
+
+.Todo .TodoHeader h3 {
+    margin: 0;
+    padding: 0;
+    font-weight: 500;
+    color: #000;
+    opacity: 0.8;
+}
+
+.DarkMode .TodoHeader h3 {
+    color: rgb(205, 215, 224);
+    font-weight: 400;
+}
+
+.Icon {
+    font-size: 20px;
+    color: aliceblue;
+    cursor: pointer;
+}
+
+.DarkMode .Icon {
+    color: rgb(205, 215, 224);
+}
+
+.Todo .TodoHeader .Icons .Icon {
+    padding-left: 8px;
+}
+
+.Icon:active {
+    transform: scale(0.95);
+}
+
+.Icon:hover {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.Todo .TodoBody {
+    margin: 0 16px;
+    text-align: justify;
+}
+
+.Todo input {
+    border: none;
+    background-color: transparent;
+    color: #000;
+    font-size: 18px;
+}
+
+.Todo input:focus {
+    outline: none;
+  }
+
+/* 
+.Todo .TodoBody textarea {
+    margin: 16px 0 0 0;
+    text-align: justify;
+}
+
+.Todo .TodoFooter {
+    margin: 0 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.Todo .TodoFooter button {
+    margin: 0;
+}
+
+.NewTodoBg {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.7);
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+}
+
+.NewTodo {
+    z-index: 2;
+    position: relative;
+    margin: 150px auto;
+    /* transition: all 5s ease-in-out; */
+/* }
+
+button .Close {
+    cursor: pointer;
+} */ 

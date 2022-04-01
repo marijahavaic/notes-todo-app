@@ -1,6 +1,6 @@
 import React from 'react';
 
-// import '../Style/Todo.css';
+import '../Style/Todo.css';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPenToSquare, faTrashCan } from '@fortawesome/free-solid-svg-icons';
