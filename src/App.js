@@ -5,6 +5,7 @@ import './App.css';
 import NotesList from './Components/NotesList';
 import AddNote from './Components/AddNote';
 import Header from './Components/Header';
+import Todo from './Components/Todo'
 
 function App() {
   const [searchText, setSearchText] = useState('');
@@ -29,6 +30,7 @@ function App() {
 
   const [darkMode, setDarkMode] = useState(false);
 
+  // Retrive notes from local storage
   useEffect(() => {
     const savedNotes = JSON.parse(
       localStorage.getItem('react-notes-todo-app-data')
@@ -83,6 +85,7 @@ function App() {
           newNote={newNote}
           handleCloseNewNote={closeNewNote}
         />}
+        <Todo />
         <NotesList
           notes={notes.filter((note) => note.text.toLowerCase().includes(searchText) || note.title.toLowerCase().includes(searchText))}
           handleAddNote={addNote}
