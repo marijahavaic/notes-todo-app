@@ -67,7 +67,7 @@
 }
 
 .Todo .TodoBody {
-    margin: 0 16px;
+    margin: 16px 16px;
     text-align: justify;
 }
 
@@ -97,3 +97,7 @@
 button .Close {
     cursor: pointer;
 } 
+
+.ToDoCheckBox {
+    margin-top: 3px;
+}

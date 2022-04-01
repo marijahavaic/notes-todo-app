@@ -16,9 +16,9 @@ const Todo = ({ id, title, listOfTodos }) => {
                 </div>
             </div>
             <div className='TodoBody'>
-                <input type="text" placeholder="Enter todo" />
+                {/* <input type="text" placeholder="Enter todo" /> */}
                 {listOfTodos.map((todo) => (
-                    <div className='TodoEntry'>
+                    <div className='ToDoCheckBox'>
                         <label>
                             <input type="checkbox" />
                             {todo}
