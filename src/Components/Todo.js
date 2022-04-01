@@ -5,11 +5,11 @@ import '../Style/Todo.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPenToSquare, faTrashCan } from '@fortawesome/free-solid-svg-icons';
 
-const Todo = ({ }) => {
+const Todo = ({ id, title, listOfTodos }) => {
     return (
-        <div className="Todo">
+        <div className="Todo" key={id}>
             <div className='TodoHeader'>
-                <h3>Todo Title</h3>
+                <h3>{title}</h3>
                 <div className='Icons'>
                     <FontAwesomeIcon icon={faPenToSquare} className="Icon" />
                     {/* <FontAwesomeIcon onClick={() => handleDeleteTodo(id)} icon={faTrashCan} className="Icon" /> */}
@@ -17,6 +17,14 @@ const Todo = ({ }) => {
             </div>
             <div className='TodoBody'>
                 <input type="text" placeholder="Enter todo" />
+                {listOfTodos.map((todo) => (
+                    <div>
+                        <label>
+                            <input type="checkbox" />
+                            {todo}
+                        </label>
+                    </div>
+                ))}
             </div>
         </div>
     )

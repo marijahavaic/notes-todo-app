@@ -5,9 +5,10 @@ import './App.css';
 import NotesList from './Components/NotesList';
 import AddNote from './Components/AddNote';
 import Header from './Components/Header';
-import Todo from './Components/Todo'
+import TodoList from './Components/TodoList';
 
 function App() {
+  const [darkMode, setDarkMode] = useState(false);
   const [searchText, setSearchText] = useState('');
   const [newNote, setNewNotes] = useState(false);
   const [notes, setNotes] = useState([
@@ -27,8 +28,17 @@ function App() {
       text: "This is my third note..."
     }
   ]);
+  const [todos, setTodos] = useState([
+    {
+      id: nanoid(),
+      title: "Todo List",
+      listOfTodos: [
+        'buy groceries',
+        'walk the doog'
+      ]
+    }
+  ])
 
-  const [darkMode, setDarkMode] = useState(false);
 
   // Retrive notes from local storage
   useEffect(() => {
@@ -85,7 +95,9 @@ function App() {
           newNote={newNote}
           handleCloseNewNote={closeNewNote}
         />}
-        <Todo />
+        <TodoList
+          todos={todos}
+        />
         <NotesList
           notes={notes.filter((note) => note.text.toLowerCase().includes(searchText) || note.title.toLowerCase().includes(searchText))}
           handleAddNote={addNote}
