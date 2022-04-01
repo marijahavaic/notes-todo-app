@@ -68,19 +68,32 @@ function App() {
   // Retrive notes from local storage
   useEffect(() => {
     const savedNotes = JSON.parse(
-      localStorage.getItem('react-notes-todo-app-data')
+      localStorage.getItem('react-notes-app-data')
+    );
+
+    const savedTodos = JSON.parse(
+      localStorage.getItem('react-todos-app-data')
     );
 
     if (savedNotes) {
       setNotes(savedNotes);
     }
+
+    if (savedTodos) {
+      setTodos(savedTodos);
+    }
   }, [])
 
   // Storing note data in local storage
   useEffect(() => {
-    localStorage.setItem('react-notes-todo-app-data', JSON.stringify(notes)
+    localStorage.setItem('react-notes-app-data', JSON.stringify(notes)
     );
   }, [notes]);
+
+  useEffect(() => {
+    localStorage.setItem('react-todos-app-data', JSON.stringify(todos)
+    );
+  }, [todos]);
 
   const addNote = (title, text) => {
     const newNote = {
