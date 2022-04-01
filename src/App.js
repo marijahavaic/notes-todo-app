@@ -62,12 +62,7 @@ function App() {
         ]
     }
   ])
-  const [newTodoItems, setNewTodoItems] = useState([
-    {
-      id: nanoid(),
-      text: "Wash the dishes"
-    }
-  ]);
+  const [newTodoItems, setNewTodoItems] = useState([]);
 
 
   // Retrive notes from local storage
@@ -146,7 +141,6 @@ function App() {
       />
       <div className='Todos'>
         {newTodo && <AddTodo
-          todos={todos}
           handleAddTodo={addTodo}
           newTodo={newTodo}
           handleCloseNewTodo={closeNewTodo}

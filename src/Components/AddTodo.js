@@ -3,8 +3,6 @@ import { nanoid } from 'nanoid';
 
 import '../Style/Todo.css';
 
-import Task from './Task';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClose, faUserInjured } from '@fortawesome/free-solid-svg-icons';
 import TaskList from './TaskList';
@@ -36,11 +34,11 @@ const AddTodo = ({ handleAddTodo, handleCloseNewTodo, newTodoItems, setNewTodoIt
     // save note with calling addNote function from App.js
     const handleSaveClick = () => {
         // check if the note isn't empty
-        if (newTodoItems.length >= 0 || todoTitle.trim().length > 0) {
+        if (newTodoItems.length > 0 || todoTitle.trim().length > 0) {
             handleAddTodo(todoTitle, newTodoItems);
             // Clear input areas
             setTodoTitle('');
-            newTodoItems([]);
+            setNewTodoItems([]);
         }
     }
 
