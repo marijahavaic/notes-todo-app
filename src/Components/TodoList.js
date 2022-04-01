@@ -2,7 +2,7 @@ import React from 'react';
 
 import Todo from './Todo';
 
-import '../Style/NotesList.css';
+import '../Style/TodoList.css';
 
 const TodoList = ({ todos }) => {
     return (

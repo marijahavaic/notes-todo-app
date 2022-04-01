@@ -89,15 +89,17 @@ function App() {
         handleToggleDarkMode={setDarkMode}
         isDark={darkMode}
       />
+      <div className='Todos'>
+        <TodoList
+          todos={todos}
+        />
+      </div>
       <div className='Notes'>
         {newNote && <AddNote
           handleAddNote={addNote}
           newNote={newNote}
           handleCloseNewNote={closeNewNote}
         />}
-        <TodoList
-          todos={todos}
-        />
         <NotesList
           notes={notes.filter((note) => note.text.toLowerCase().includes(searchText) || note.title.toLowerCase().includes(searchText))}
           handleAddNote={addNote}
