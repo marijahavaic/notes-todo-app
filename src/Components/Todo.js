@@ -20,7 +20,7 @@ const Todo = ({ id, title, listOfTodos }) => {
                 {listOfTodos.map((todo) => (
                     <div className='ToDoCheckBox'>
                         <label>
-                            <input type="checkbox" />
+                            <input type="checkbox" style={{ marginRight: '4px' }} />
                             {todo}
                         </label>
                     </div>
