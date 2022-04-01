@@ -7,17 +7,11 @@ import Task from './Task';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClose, faUserInjured } from '@fortawesome/free-solid-svg-icons';
+import TaskList from './TaskList';
 
-const AddTodo = ({ handleAddTodo, handleCloseNewTodo }) => {
+const AddTodo = ({ handleAddTodo, handleCloseNewTodo, newTodoItems, setNewTodoItems }) => {
     const [todoTitle, setTodoTitle] = useState('');
     const [taskText, setTaskText] = useState('');
-    const [newTodoItems, setNewTodoItems] = useState([
-        {
-            id: nanoid(),
-            text: "Wash the dishes"
-        }
-    ]);
-
 
     // set todo title
     const handleTitleChange = (e) => {
@@ -26,17 +20,17 @@ const AddTodo = ({ handleAddTodo, handleCloseNewTodo }) => {
 
     // set todo item
     const handleTextInput = (e) => {
-        e.preventDefault();
         setTaskText(e.target.value);
-        addNewTask(taskText);
     }
 
-    const addNewTask = (task) => {
+    const handleSubmit = (e) => {
+        e.preventDefault();
         const newTask = {
             id: nanoid(),
-            text: task
+            text: taskText
         }
         setNewTodoItems([newTask, ...newTodoItems]);
+        setTaskText('');
     }
 
     // save note with calling addNote function from App.js
@@ -65,7 +59,7 @@ const AddTodo = ({ handleAddTodo, handleCloseNewTodo }) => {
                 </div>
                 <div className='TodoBody'>
                     <div className='TodoEntry'>
-                        <form>
+                        <form onSubmit={handleSubmit}>
                             <input
                                 type="text"
                                 value={taskText}
@@ -74,11 +68,8 @@ const AddTodo = ({ handleAddTodo, handleCloseNewTodo }) => {
                             />
                         </form>
                     </div>
-                    {
-                        newTodoItems.map((task) => {
-                            <Task id={task.id} text={task.text} />
-                        })
-                    }
+                    <TaskList newTodoItems={newTodoItems} />
+
                 </div>
                 <div className='TodoFooter'>
                     <button className='saveTodo'
