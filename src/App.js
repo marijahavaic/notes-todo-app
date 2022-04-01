@@ -78,11 +78,11 @@ function App() {
     setNewNotes(false);
   };
 
-  const addTodo = (title, list) => {
+  const addTodo = (title, listOfTodos) => {
     const newTodo = {
       id: nanoid(),
       title: title,
-      listOfTodos: []
+      listOfTodos: listOfTodos
     }
     const newTodos = [newTodo, ...todos];
     setTodos(newTodos);
@@ -93,9 +93,9 @@ function App() {
     setNewNotes(!newNote);
   }
 
-  const addTodoComponent = (e) => {
-    setNewTodos(!newTodo);
-  }
+  // const addTodoComponent = (e) => {
+  //   setNewTodos(!newTodo);
+  // }
 
   const deleteNote = (id) => {
     const newNotes = notes.filter((note) => note.id !== id);
@@ -116,7 +116,7 @@ function App() {
       />
       <div className='Todos'>
         <TodoList
-          todos={todos}
+          todos={todos.filter((todo) => todo.title.toLocaleLowerCase().includes(searchText))}
           handleAddTodos={addTodo}
         />
       </div>
