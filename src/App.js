@@ -29,7 +29,7 @@ function App() {
       text: "This is my third note..."
     }
   ]);
-  const [newTodo, setNewTodos] = useState(false);
+  const [newTodos, setNewTodos] = useState(false);
   const [todos, setTodos] = useState([
     {
       id: nanoid(),
@@ -93,13 +93,18 @@ function App() {
     setNewNotes(!newNote);
   }
 
-  // const addTodoComponent = (e) => {
-  //   setNewTodos(!newTodo);
-  // }
+  const addTodoComponent = (e) => {
+    setNewTodos(!newTodos);
+  }
 
   const deleteNote = (id) => {
     const newNotes = notes.filter((note) => note.id !== id);
     setNotes(newNotes);
+  }
+
+  const deleteTodo = (id) => {
+    const newTodos = todos.filter((todo) => todo.id !== id);
+    setTodos(newTodos);
   }
 
   const closeNewNote = () => {
@@ -118,6 +123,7 @@ function App() {
         <TodoList
           todos={todos.filter((todo) => todo.title.toLocaleLowerCase().includes(searchText))}
           handleAddTodos={addTodo}
+          handleDeleteTodo={deleteTodo}
         />
       </div>
       <div className='Notes'>
