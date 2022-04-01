@@ -47,12 +47,11 @@ const AddTodo = ({ newTodo, handleAddTodo, handleCloseNewNote, handleCloseNewTod
                     <div className='TodoEntry'>
                         <label>
                             <input type="checkbox" />
-                            {/* {todo} */}
                         </label>
                     </div>
                 </div>
-                <div className='NoteFooter'>
-                    <button className='save'
+                <div className='TodoFooter'>
+                    <button className='saveTodo'
                         onClick={handleSaveClick}
                     >Save</button>
                 </div>

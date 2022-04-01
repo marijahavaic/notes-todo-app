@@ -84,9 +84,7 @@
 
 .Todo .TodoFooter {
     margin: 0 15px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    position: relative;
 }
 
 .Todo .TodoFooter button {
