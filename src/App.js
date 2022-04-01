@@ -29,7 +29,7 @@ function App() {
       text: "This is my third note..."
     }
   ]);
-  const [newTodos, setNewTodos] = useState(false);
+  const [newTodo, setNewTodos] = useState(false);
   const [todos, setTodos] = useState([
     {
       id: nanoid(),
@@ -94,7 +94,7 @@ function App() {
   }
 
   const addTodoComponent = (e) => {
-    setNewTodos(!newTodos);
+    setNewTodos(!newTodo);
   }
 
   const deleteNote = (id) => {
@@ -115,6 +115,7 @@ function App() {
     <div className={`${darkMode ? 'DarkMode' : 'App'}`}>
       <Header
         handleAddNote={addNoteComponent}
+        handleAddTodo={addTodoComponent}
         handleSearchNote={setSearchText}
         handleToggleDarkMode={setDarkMode}
         isDark={darkMode}
@@ -122,7 +123,8 @@ function App() {
       <div className='Todos'>
         <TodoList
           todos={todos.filter((todo) => todo.title.toLocaleLowerCase().includes(searchText))}
-          handleAddTodos={addTodo}
+          handleAddTodo={addTodo}
+          newTodo={newTodo}
           handleDeleteTodo={deleteTodo}
         />
       </div>

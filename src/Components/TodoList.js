@@ -5,11 +5,12 @@ import Todo from './Todo';
 import '../Style/TodoList.css';
 import AddTodo from './AddTodo';
 
-const TodoList = ({ todos, handleDeleteTodo }) => {
+const TodoList = ({ todos, handleDeleteTodo, newTodo, handleAddTodo }) => {
     return (
         <div className="TodoList">
             <AddTodo
-
+                newTodo={newTodo}
+                handleAddTodo={handleAddTodo}
             />
             {todos.map((todo) => (
                 <Todo
