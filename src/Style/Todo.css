@@ -61,6 +61,11 @@
     color: rgba(0, 0, 0, 0.5);
 }
 
+
+.Todo .TodoHeader textarea {
+    background-color: transparent;
+}
+
 .Todo .TodoBody {
     margin: 0 16px;
     text-align: justify;
@@ -75,12 +80,6 @@
 
 .Todo input:focus {
     outline: none;
-  }
-
-/* 
-.Todo .TodoBody textarea {
-    margin: 16px 0 0 0;
-    text-align: justify;
 }
 
 .Todo .TodoFooter {
@@ -94,23 +93,7 @@
     margin: 0;
 }
 
-.NewTodoBg {
-    position: fixed;
-    background-color: rgba(0, 0, 0, 0.7);
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100vh;
-    z-index: 1;
-}
-
-.NewTodo {
-    z-index: 2;
-    position: relative;
-    margin: 150px auto;
-    /* transition: all 5s ease-in-out; */
-/* }
 
 button .Close {
     cursor: pointer;
-} */ 
+} 

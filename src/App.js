@@ -3,6 +3,7 @@ import { nanoid } from 'nanoid';
 
 import './App.css';
 import NotesList from './Components/NotesList';
+import AddTodo from './Components/AddTodo';
 import AddNote from './Components/AddNote';
 import Header from './Components/Header';
 import TodoList from './Components/TodoList';
@@ -28,13 +29,22 @@ function App() {
       text: "This is my third note..."
     }
   ]);
+  const [newTodo, setNewTodos] = useState(false);
   const [todos, setTodos] = useState([
     {
       id: nanoid(),
-      title: "Todo List",
+      title: "First Todo List",
       listOfTodos: [
         'buy groceries',
-        'walk the doog'
+        'walk the dog'
+      ]
+    },
+    {
+      id: nanoid(),
+      title: "Second Todo List",
+      listOfTodos: [
+        'Clean',
+        'Shopping'
       ]
     }
   ])
@@ -68,8 +78,23 @@ function App() {
     setNewNotes(false);
   };
 
+  const addTodo = (title, list) => {
+    const newTodo = {
+      id: nanoid(),
+      title: title,
+      listOfTodos: []
+    }
+    const newTodos = [newTodo, ...todos];
+    setTodos(newTodos);
+    setNewTodos(false);
+  };
+
   const addNoteComponent = (e) => {
     setNewNotes(!newNote);
+  }
+
+  const addTodoComponent = (e) => {
+    setNewTodos(!newTodo);
   }
 
   const deleteNote = (id) => {
@@ -92,6 +117,7 @@ function App() {
       <div className='Todos'>
         <TodoList
           todos={todos}
+          handleAddTodos={addTodo}
         />
       </div>
       <div className='Notes'>
