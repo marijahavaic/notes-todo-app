@@ -8,10 +8,10 @@ import AddTodo from './AddTodo';
 const TodoList = ({ todos, handleDeleteTodo, newTodo, handleAddTodo }) => {
     return (
         <div className="TodoList">
-            <AddTodo
+            {/* <AddTodo
                 newTodo={newTodo}
                 handleAddTodo={handleAddTodo}
-            />
+            /> */}
             {todos.map((todo) => (
                 <Todo
                     id={todo.id}

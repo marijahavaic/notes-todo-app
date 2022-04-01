@@ -7,7 +7,7 @@ import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
 
 import '../App.css';
 
-const Header = ({ handleAddNote, handleSearchNote, handleToggleDarkMode, isDark }) => {
+const Header = ({ handleAddNote, handleAddTodo, handleSearchNote, handleToggleDarkMode, isDark }) => {
     return (
         <div className='Header'>
             <div className='HeaderTitle'>
@@ -22,7 +22,7 @@ const Header = ({ handleAddNote, handleSearchNote, handleToggleDarkMode, isDark 
                 <Search handleSearchNote={handleSearchNote} />
                 <div className='Buttons'>
                     <button onClick={handleAddNote}>+ Add Note</button>
-                    <button>+ Add Todo</button>
+                    <button onClick={handleAddTodo}>+ Add Todo</button>
                 </div>
             </div>
         </div>

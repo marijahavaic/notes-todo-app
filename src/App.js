@@ -121,6 +121,12 @@ function App() {
         isDark={darkMode}
       />
       <div className='Todos'>
+        {newTodo && <AddTodo
+          handleAddTodo={addTodo}
+          newTodo={newTodo}
+          handleCloseNewNote={closeNewNote}
+        />
+        }
         <TodoList
           todos={todos.filter((todo) => todo.title.toLocaleLowerCase().includes(searchText))}
           handleAddTodo={addTodo}

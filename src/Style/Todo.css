@@ -98,6 +98,24 @@ button .Close {
     cursor: pointer;
 } 
 
+.NewTodoBg {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.7);
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+}
+
+.NewTodo {
+    z-index: 2;
+    position: relative;
+    margin: 150px auto;
+    /* transition: all 5s ease-in-out; */
+}
+
 .ToDoCheckBox {
     margin-top: 3px;
 }
+
