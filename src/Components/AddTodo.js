@@ -5,7 +5,7 @@ import '../Style/Todo.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClose } from '@fortawesome/free-solid-svg-icons';
 
-const AddTodo = ({ newTodo, handleAddTodo, handleCloseNewNote }) => {
+const AddTodo = ({ newTodo, handleAddTodo, handleCloseNewNote, handleCloseNewTodo }) => {
     const [todoTitle, setTodoTitle] = useState('');
     const [listOfTodos, setListOfTodos] = useState([]);
 
@@ -41,7 +41,7 @@ const AddTodo = ({ newTodo, handleAddTodo, handleCloseNewNote }) => {
                         value={todoTitle}
                         onChange={handleTitleChange}
                     ></textarea>
-                    <FontAwesomeIcon icon={faClose} className="Icon" onClick={handleCloseNewNote} />
+                    <FontAwesomeIcon icon={faClose} className="Icon" onClick={handleCloseNewTodo} />
                 </div>
                 <div className='TodoBody'>
                     <div className='TodoEntry'>

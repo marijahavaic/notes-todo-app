@@ -111,6 +111,10 @@ function App() {
     setNewNotes(false);
   }
 
+  const closeNewTodo = () => {
+    setNewTodos(false);
+  }
+
   return (
     <div className={`${darkMode ? 'DarkMode' : 'App'}`}>
       <Header
@@ -124,7 +128,7 @@ function App() {
         {newTodo && <AddTodo
           handleAddTodo={addTodo}
           newTodo={newTodo}
-          handleCloseNewNote={closeNewNote}
+          handleCloseNewTodo={closeNewTodo}
         />
         }
         <TodoList
