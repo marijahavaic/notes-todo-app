@@ -1,32 +1,52 @@
 import { useState } from 'react';
+import { nanoid } from 'nanoid';
 
 import '../Style/Todo.css';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faClose } from '@fortawesome/free-solid-svg-icons';
+import Task from './Task';
 
-const AddTodo = ({ newTodo, handleAddTodo, handleCloseNewNote, handleCloseNewTodo }) => {
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faClose, faUserInjured } from '@fortawesome/free-solid-svg-icons';
+
+const AddTodo = ({ handleAddTodo, handleCloseNewTodo }) => {
     const [todoTitle, setTodoTitle] = useState('');
-    const [listOfTodos, setListOfTodos] = useState([]);
+    const [taskText, setTaskText] = useState('');
+    const [newTodoItems, setNewTodoItems] = useState([
+        {
+            id: nanoid(),
+            text: "Wash the dishes"
+        }
+    ]);
+
 
     // set todo title
     const handleTitleChange = (e) => {
         setTodoTitle(e.target.value);
     }
 
-    // set todo
-    // const handleTextChange = (e) => {
-    //     setNoteText([e.target.value, ...listOfTodos]);
-    // }
+    // set todo item
+    const handleTextInput = (e) => {
+        e.preventDefault();
+        setTaskText(e.target.value);
+        addNewTask(taskText);
+    }
+
+    const addNewTask = (task) => {
+        const newTask = {
+            id: nanoid(),
+            text: task
+        }
+        setNewTodoItems([newTask, ...newTodoItems]);
+    }
 
     // save note with calling addNote function from App.js
     const handleSaveClick = () => {
         // check if the note isn't empty
-        if (listOfTodos.length > 0 || todoTitle.trim().length > 0) {
-            handleAddTodo(todoTitle, listOfTodos);
+        if (newTodoItems.length >= 0 || todoTitle.trim().length > 0) {
+            handleAddTodo(todoTitle, newTodoItems);
             // Clear input areas
             setTodoTitle('');
-            listOfTodos([]);
+            newTodoItems([]);
         }
     }
 
@@ -45,10 +65,20 @@ const AddTodo = ({ newTodo, handleAddTodo, handleCloseNewNote, handleCloseNewTod
                 </div>
                 <div className='TodoBody'>
                     <div className='TodoEntry'>
-                        <label>
-                            <input type="checkbox" />
-                        </label>
+                        <form>
+                            <input
+                                type="text"
+                                value={taskText}
+                                placeholder="Enter todo"
+                                onChange={handleTextInput}
+                            />
+                        </form>
                     </div>
+                    {
+                        newTodoItems.map((task) => {
+                            <Task id={task.id} text={task.text} />
+                        })
+                    }
                 </div>
                 <div className='TodoFooter'>
                     <button className='saveTodo'

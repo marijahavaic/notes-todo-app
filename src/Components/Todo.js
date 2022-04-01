@@ -2,6 +2,8 @@ import React from 'react';
 
 import '../Style/Todo.css';
 
+import Task from './Task';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPenToSquare, faTrashCan } from '@fortawesome/free-solid-svg-icons';
 
@@ -16,14 +18,8 @@ const Todo = ({ id, title, listOfTodos, handleDeleteTodo }) => {
                 </div>
             </div>
             <div className='TodoBody'>
-                {/* <input type="text" placeholder="Enter todo" /> */}
-                {listOfTodos.map((todo) => (
-                    <div className='ToDoCheckBox'>
-                        <label>
-                            <input type="checkbox" style={{ marginRight: '4px' }} />
-                            {todo}
-                        </label>
-                    </div>
+                {listOfTodos.map((task) => (
+                    <Task id={task.id} text={task.text} />
                 ))}
             </div>
         </div>

@@ -30,22 +30,36 @@ function App() {
     }
   ]);
   const [newTodo, setNewTodos] = useState(false);
+
   const [todos, setTodos] = useState([
     {
       id: nanoid(),
       title: "First Todo List",
       listOfTodos: [
-        'buy groceries',
-        'walk the dog'
+        {
+          id: nanoid(),
+          text: 'buy groceries',
+        },
+        {
+          id: nanoid(),
+          text: 'walk the dog'
+        }
       ]
     },
     {
       id: nanoid(),
       title: "Second Todo List",
-      listOfTodos: [
-        'Clean',
-        'Shopping'
-      ]
+      listOfTodos:
+        [
+          {
+            id: nanoid(),
+            text: 'Shopping',
+          },
+          {
+            id: nanoid(),
+            text: 'Clean'
+          }
+        ]
     }
   ])
 
