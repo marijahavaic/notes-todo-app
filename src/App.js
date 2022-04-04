@@ -62,7 +62,7 @@ function App() {
         ]
     }
   ])
-  const [newTodoItems, setNewTodoItems] = useState([]);
+  const [newTasks, setNewTasks] = useState([]);
 
 
   // Retrive notes from local storage
@@ -135,6 +135,11 @@ function App() {
     setTodos(newTodos);
   }
 
+  const deleteTask = (id) => {
+    const newTasks = newTasks.filter((task) => task.id !== id);
+    setNewTasks(newTasks);
+  }
+
   const closeNewNote = () => {
     setNewNotes(false);
   }
@@ -157,8 +162,9 @@ function App() {
           handleAddTodo={addTodo}
           newTodo={newTodo}
           handleCloseNewTodo={closeNewTodo}
-          newTodoItems={newTodoItems}
-          setNewTodoItems={setNewTodoItems}
+          newTasks={newTasks}
+          setNewTasks={setNewTasks}
+          handleDeleteTask={deleteTask}
         />
         }
         <TodoList

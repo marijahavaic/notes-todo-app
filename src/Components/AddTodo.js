@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClose, faUserInjured } from '@fortawesome/free-solid-svg-icons';
 import TaskList from './TaskList';
 
-const AddTodo = ({ handleAddTodo, handleCloseNewTodo, newTodoItems, setNewTodoItems }) => {
+const AddTodo = ({ handleAddTodo, handleCloseNewTodo, newTasks, setNewTasks, handleDeleteTask }) => {
     const [todoTitle, setTodoTitle] = useState('');
     const [taskText, setTaskText] = useState('');
 
@@ -27,18 +27,18 @@ const AddTodo = ({ handleAddTodo, handleCloseNewTodo, newTodoItems, setNewTodoIt
             id: nanoid(),
             text: taskText
         }
-        setNewTodoItems([newTask, ...newTodoItems]);
+        setNewTasks([newTask, ...newTasks]);
         setTaskText('');
     }
 
     // save note with calling addNote function from App.js
     const handleSaveClick = () => {
         // check if the note isn't empty
-        if (newTodoItems.length > 0 || todoTitle.trim().length > 0) {
-            handleAddTodo(todoTitle, newTodoItems);
+        if (newTasks.length > 0 || todoTitle.trim().length > 0) {
+            handleAddTodo(todoTitle, newTasks);
             // Clear input areas
             setTodoTitle('');
-            setNewTodoItems([]);
+            setNewTasks([]);
         }
     }
 
@@ -66,7 +66,7 @@ const AddTodo = ({ handleAddTodo, handleCloseNewTodo, newTodoItems, setNewTodoIt
                             />
                         </form>
                     </div>
-                    <TaskList newTodoItems={newTodoItems} />
+                    <TaskList newTasks={newTasks} handleDeleteTask={handleDeleteTask} />
 
                 </div>
                 <div className='TodoFooter'>
