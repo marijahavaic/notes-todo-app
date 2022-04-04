@@ -14,7 +14,7 @@
 
 .Todo .TodoHeader {
     height: 30px;
-    background-color: rgba(107,170,244,1);
+    background-color: rgba(107, 170, 244, 1);
     text-align: left;
     padding: 15px;
     display: flex;
@@ -57,8 +57,14 @@
     transform: scale(0.95);
 }
 
-.Icon:hover {
+.Icon:hover,
+.IconTask:hover {
     color: rgba(0, 0, 0, 0.5);
+}
+
+.IconTask {
+    color: rgb(205, 215, 224);
+    margin-left: 10px;
 }
 
 
@@ -94,7 +100,7 @@
 
 button .Close {
     cursor: pointer;
-} 
+}
 
 .NewTodoBg {
     position: fixed;
@@ -116,4 +122,3 @@ button .Close {
 .ToDoCheckBox {
     margin-top: 3px;
 }
-

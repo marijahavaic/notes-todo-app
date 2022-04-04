@@ -13,7 +13,7 @@ const Task = ({ id, text }) => {
                     <input type="checkbox" style={{ marginRight: '4px' }} />
                     {text}
                 </label>
-                <FontAwesomeIcon icon={faTrashCan} className="Icon" />
+                <FontAwesomeIcon icon={faTrashCan} className="IconTask" />
             </div>
         </div>
     )

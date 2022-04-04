@@ -38,7 +38,7 @@ function App() {
       listOfTodos: [
         {
           id: nanoid(),
-          text: 'buy groceries',
+          text: 'Buy groceries',
         },
         {
           id: nanoid(),
