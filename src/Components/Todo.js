@@ -7,7 +7,7 @@ import Task from './Task';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPenToSquare, faTrashCan } from '@fortawesome/free-solid-svg-icons';
 
-const Todo = ({ id, title, listOfTodos, handleDeleteTodo }) => {
+const Todo = ({ id, title, listOfTodos, handleDeleteTodo, handleDeleteTask }) => {
     return (
         <div className="Todo" key={id}>
             <div className='TodoHeader'>
@@ -19,7 +19,7 @@ const Todo = ({ id, title, listOfTodos, handleDeleteTodo }) => {
             </div>
             <div className='TodoBody'>
                 {listOfTodos.map((task) => (
-                    <Task id={task.id} text={task.text} />
+                    <Task taskId={task.id} text={task.text} handleDeleteTask={handleDeleteTask} />
                 ))}
             </div>
         </div>

@@ -6,6 +6,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPenToSquare, faTrashCan } from '@fortawesome/free-solid-svg-icons';
 
 const Note = ({ id, title, text, handleDeleteNote }) => {
+    // const [edit, setEdit] = useState({
+    //     id: none,
+    //     title: '',
+    //     text: ''
+    // })
     return (
         <div className="Note" key={id}>
             <div className='NoteHeader'>

@@ -7,7 +7,11 @@ const TaskList = ({ newTasks, handleDeleteTask }) => {
     return (
         <div className="TaskList">
             {newTasks.map((task) => (
-                <Task id={task.id} text={task.text} handleDeleteTask={handleDeleteTask} />
+                <Task
+                    id={task.id}
+                    text={task.text}
+                    handleDeleteTask={handleDeleteTask}
+                />
             ))
             }
         </div>

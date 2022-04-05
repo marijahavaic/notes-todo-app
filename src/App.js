@@ -30,7 +30,6 @@ function App() {
     }
   ]);
   const [newTodo, setNewTodos] = useState(false);
-
   const [todos, setTodos] = useState([
     {
       id: nanoid(),
@@ -62,7 +61,12 @@ function App() {
         ]
     }
   ])
-  const [newTasks, setNewTasks] = useState([]);
+  const [newTasks, setNewTasks] = useState([
+    {
+      id: nanoid(),
+      text: 'Wash the dishes'
+    }
+  ]);
 
 
   // Retrive notes from local storage
@@ -136,8 +140,8 @@ function App() {
   }
 
   const deleteTask = (id) => {
-    const newTasks = newTasks.filter((task) => task.id !== id);
-    setNewTasks(newTasks);
+    const newTasksArr = newTasks.filter((task) => task.id !== id);
+    setNewTasks(newTasksArr);
   }
 
   const closeNewNote = () => {
@@ -162,6 +166,7 @@ function App() {
           handleAddTodo={addTodo}
           newTodo={newTodo}
           handleCloseNewTodo={closeNewTodo}
+
           newTasks={newTasks}
           setNewTasks={setNewTasks}
           handleDeleteTask={deleteTask}
@@ -172,6 +177,7 @@ function App() {
           handleAddTodo={addTodo}
           newTodo={newTodo}
           handleDeleteTodo={deleteTodo}
+          handleDeleteTask={deleteTask}
         />
       </div>
       <div className='Notes'>
