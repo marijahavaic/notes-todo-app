@@ -19,7 +19,11 @@ const Todo = ({ id, title, listOfTodos, handleDeleteTodo, handleDeleteTask }) =>
             </div>
             <div className='TodoBody'>
                 {listOfTodos.map((task) => (
-                    <Task taskId={task.id} text={task.text} handleDeleteTask={handleDeleteTask} />
+                    <Task
+                        key={task.id}
+                        taskId={task.id}
+                        text={task.text}
+                        handleDeleteTask={handleDeleteTask} />
                 ))}
             </div>
         </div>
