@@ -80,20 +80,16 @@ function App() {
   };
 
   const editNote = (id, title, text) => {
-    const updatedNote = {
-      id: id,
-      title: title,
-      text: text
-    }
 
     const updatedNotes = notes.map(note => {
-      if (note.id = id) {
-        return { ...notes, updatedNote }
+      if (note.id === id) {
+        return { ...note, title, text }
       }
+      return note;
     });
     setNotes(updatedNotes);
 
-    console.log(updatedNote, updatedNotes)
+    console.log(updatedNotes, notes)
   }
 
   const addTodo = (title, listOfTodos) => {
