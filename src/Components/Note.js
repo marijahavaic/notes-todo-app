@@ -8,6 +8,10 @@ import { faPenToSquare, faTrashCan } from '@fortawesome/free-solid-svg-icons';
 const Note = ({ id, title, text, handleDeleteNote }) => {
     const [isEditing, setIsEditing] = useState(false);
 
+    const toggleForm = () => {
+        setIsEditing(!isEditing);
+    }
+
 
     return (
         <div className="Note" key={id}>
@@ -15,6 +19,7 @@ const Note = ({ id, title, text, handleDeleteNote }) => {
                 <h3>{title}</h3>
                 <div className='Icons'>
                     <FontAwesomeIcon
+                        onClick={() => toggleForm()}
                         icon={faPenToSquare}
                         className="Icon"
                     />
