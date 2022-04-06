@@ -10,6 +10,7 @@ const TodoList = ({ todos, handleDeleteTodo, newTodo, handleAddTodo, handleDelet
         <div className="TodoList">
             {todos.map((todo) => (
                 <Todo
+                    key={todo.id}
                     id={todo.id}
                     title={todo.title}
                     listOfTodos={todo.listOfTodos}
