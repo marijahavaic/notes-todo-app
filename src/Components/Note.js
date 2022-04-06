@@ -39,29 +39,6 @@ const Note = ({ id, title, text, handleDeleteNote, handleEditNote, handleCloseEd
     }
 
 
-    const viewNote = (
-        <div className="Note" key={id}>
-            <div className='NoteHeader'>
-                <h3>{title}</h3>
-                <div className='Icons'>
-                    <FontAwesomeIcon
-                        onClick={() => toggleForm()}
-                        icon={faPenToSquare}
-                        className="Icon"
-                    />
-                    <FontAwesomeIcon
-                        onClick={() => handleDeleteNote(id)}
-                        icon={faTrashCan}
-                        className="Icon"
-                    />
-                </div>
-            </div>
-            <div className='NoteBody'>
-                <p>{text}</p>
-            </div>
-        </div>
-    );
-
     const editNote = (
         <div className='NewNoteBg'>
             <div className="Note NewNote">
@@ -92,7 +69,31 @@ const Note = ({ id, title, text, handleDeleteNote, handleEditNote, handleCloseEd
                 </div>
             </div>
         </div>
-    )
+    );
+
+    const viewNote = (
+        <div className="Note" key={id}>
+            <div className='NoteHeader'>
+                <h3>{title}</h3>
+                <div className='Icons'>
+                    <FontAwesomeIcon
+                        onClick={() => toggleForm()}
+                        icon={faPenToSquare}
+                        className="Icon"
+                    />
+                    <FontAwesomeIcon
+                        onClick={() => handleDeleteNote(id)}
+                        icon={faTrashCan}
+                        className="Icon"
+                    />
+                </div>
+            </div>
+            <div className='NoteBody'>
+                <p>{text}</p>
+            </div>
+        </div>
+    );
+
 
     return (
         <div>

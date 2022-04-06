@@ -9,9 +9,15 @@ import { faPenToSquare, faTrashCan, faClose } from '@fortawesome/free-solid-svg-
 
 const Todo = ({ id, title, listOfTodos, handleDeleteTodo, handleDeleteTask }) => {
     const [isEditing, setIsEditing] = useState(false);
+    const [editTitle, setEditTitle] = useState(title);
 
     const toggleForm = () => {
         setIsEditing(!isEditing);
+    }
+
+    // set note title
+    const handleTitleEdit = (e) => {
+        setEditTitle(e.target.value)
     }
 
     const editTodo = (
@@ -22,8 +28,9 @@ const Todo = ({ id, title, listOfTodos, handleDeleteTodo, handleDeleteTask }) =>
                         rows={1}
                         cols={28}
                         placeholder="New Todo"
-                    // value={todoTitle}
-                    // onChange={handleTitleChange}
+                        value={editTitle}
+                        name={title}
+                        onChange={handleTitleEdit}
                     ></textarea>
                     <FontAwesomeIcon
                         icon={faClose}
