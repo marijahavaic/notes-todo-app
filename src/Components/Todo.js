@@ -1,20 +1,79 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import '../Style/Todo.css';
 
 import Task from './Task';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPenToSquare, faTrashCan } from '@fortawesome/free-solid-svg-icons';
+import { faPenToSquare, faTrashCan, faClose } from '@fortawesome/free-solid-svg-icons';
 
 const Todo = ({ id, title, listOfTodos, handleDeleteTodo, handleDeleteTask }) => {
-    return (
+    const [isEditing, setIsEditing] = useState(false);
+
+    const toggleForm = () => {
+        setIsEditing(!isEditing);
+    }
+
+    const editTodo = (
+        <div className='NewTodoBg'>
+            <div className="Todo NewTodo">
+                <div className='TodoHeader'>
+                    <textarea
+                        rows={1}
+                        cols={28}
+                        placeholder="New Todo"
+                    // value={todoTitle}
+                    // onChange={handleTitleChange}
+                    ></textarea>
+                    <FontAwesomeIcon
+                        icon={faClose}
+                        className="Icon"
+                    // onClick={handleCloseNewTodo}
+                    />
+                </div>
+                <div className='TodoBody'>
+                    <div className='TodoEntry'>
+                        <form
+                        // onSubmit={handleSubmit}
+                        >
+                            <input
+                                type="text"
+                                // value={taskText}
+                                placeholder="Enter todo"
+                            // onChange={handleTextInput}
+                            />
+                        </form>
+                    </div>
+                    {/* <TaskList
+                        newTasks={newTasks}
+                        handleDeleteTask={handleDeleteTask}
+                    /> */}
+
+                </div>
+                <div className='TodoFooter'>
+                    <button className='saveTodo'
+                    // onClick={handleSaveClick}
+                    >Save</button>
+                </div>
+            </div>
+        </div>
+    );
+
+    const viewTodo = (
         <div className="Todo" key={id}>
             <div className='TodoHeader'>
                 <h3>{title}</h3>
                 <div className='Icons'>
-                    <FontAwesomeIcon icon={faPenToSquare} className="Icon" />
-                    <FontAwesomeIcon onClick={() => handleDeleteTodo(id)} icon={faTrashCan} className="Icon" />
+                    <FontAwesomeIcon
+                        onClick={() => toggleForm()}
+                        icon={faPenToSquare}
+                        className="Icon"
+                    />
+                    <FontAwesomeIcon
+                        onClick={() => handleDeleteTodo(id)}
+                        icon={faTrashCan}
+                        className="Icon"
+                    />
                 </div>
             </div>
             <div className='TodoBody'>
@@ -26,6 +85,11 @@ const Todo = ({ id, title, listOfTodos, handleDeleteTodo, handleDeleteTask }) =>
                         handleDeleteTask={handleDeleteTask} />
                 ))}
             </div>
+        </div>
+    )
+    return (
+        <div>
+            {isEditing ? editTodo : viewTodo}
         </div>
     )
 }
