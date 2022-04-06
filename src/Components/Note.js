@@ -38,6 +38,9 @@ const Note = ({ id, title, text, handleDeleteNote, handleEditNote, handleCloseEd
         setIsEditing(!isEditing);
     }
 
+    const closeEditNote = () => {
+        setIsEditing(false);
+    }
 
     const editNote = (
         <div className='NewNoteBg'>
@@ -51,7 +54,7 @@ const Note = ({ id, title, text, handleDeleteNote, handleEditNote, handleCloseEd
                         name={title}
                         onChange={handleTitleEdit}
                     ></textarea>
-                    <FontAwesomeIcon icon={faClose} className="Icon" onClick={handleCloseEdit} />
+                    <FontAwesomeIcon icon={faClose} className="Icon" onClick={closeEditNote} />
                 </div>
                 <div className='NoteBody'>
                     <textarea

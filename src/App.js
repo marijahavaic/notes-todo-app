@@ -12,7 +12,6 @@ function App() {
   const [darkMode, setDarkMode] = useState(false);
   const [searchText, setSearchText] = useState('');
   // Notes
-  const [editedNote, setEditedNotes] = useState(false);
   const [newNote, setNewNotes] = useState(false);
   const [notes, setNotes] = useState([
     // {
@@ -134,10 +133,6 @@ function App() {
     setNewTodos(false);
   }
 
-  const closeEditNote = () => {
-    setEditedNotes(false);
-  }
-
   return (
     <div className={`${darkMode ? 'DarkMode' : 'App'}`}>
       <Header
@@ -178,7 +173,6 @@ function App() {
           handleEditNote={editNote}
           handleDeleteNote={deleteNote}
           newNote={newNote}
-          handleCloseEdit={closeEditNote}
         />
       </div>
     </div>

@@ -20,6 +20,10 @@ const Todo = ({ id, title, listOfTodos, handleDeleteTodo, handleDeleteTask }) =>
         setEditTitle(e.target.value)
     }
 
+    const closeEditTodo = () => {
+        setIsEditing(false);
+    }
+
     const editTodo = (
         <div className='NewTodoBg'>
             <div className="Todo NewTodo">
@@ -35,7 +39,7 @@ const Todo = ({ id, title, listOfTodos, handleDeleteTodo, handleDeleteTask }) =>
                     <FontAwesomeIcon
                         icon={faClose}
                         className="Icon"
-                    // onClick={handleCloseNewTodo}
+                        onClick={closeEditTodo}
                     />
                 </div>
                 <div className='TodoBody'>
