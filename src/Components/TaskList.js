@@ -8,6 +8,7 @@ const TaskList = ({ newTasks, handleDeleteTask }) => {
         <div className="TaskList">
             {newTasks.map((task) => (
                 <Task
+                    key={task.id}
                     id={task.id}
                     text={task.text}
                     handleDeleteTask={handleDeleteTask}
