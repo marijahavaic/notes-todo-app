@@ -2,22 +2,43 @@ import React, { useState } from 'react';
 
 import '../Style/Todo.css';
 
+import { nanoid } from 'nanoid';
+
+import TaskList from './TaskList';
 import Task from './Task';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPenToSquare, faTrashCan, faClose } from '@fortawesome/free-solid-svg-icons';
 
-const Todo = ({ id, title, listOfTodos, handleDeleteTodo, handleDeleteTask }) => {
+const Todo = ({ id, title, listOfTodos, handleDeleteTodo, handleDeleteTask, newTasks, setNewTasks }) => {
     const [isEditing, setIsEditing] = useState(false);
     const [editTitle, setEditTitle] = useState(title);
+    const [taskText, setTaskText] = useState('');
 
-    const toggleForm = () => {
-        setIsEditing(!isEditing);
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const newTask = {
+            id: nanoid(),
+            text: taskText,
+            completed: false
+        }
+        setNewTasks([newTask, ...newTasks]);
+        setTaskText('');
     }
+
 
     // set note title
     const handleTitleEdit = (e) => {
         setEditTitle(e.target.value)
+    }
+
+    // set task
+    const handleTextInput = (e) => {
+        setTaskText(e.target.value);
+    }
+
+    const toggleForm = () => {
+        setIsEditing(!isEditing);
     }
 
     const closeEditTodo = () => {
@@ -45,13 +66,13 @@ const Todo = ({ id, title, listOfTodos, handleDeleteTodo, handleDeleteTask }) =>
                 <div className='TodoBody'>
                     <div className='TodoEntry'>
                         <form
-                        // onSubmit={handleSubmit}
+                            onSubmit={handleSubmit}
                         >
                             <input
                                 type="text"
-                                // value={taskText}
+                                value={taskText}
                                 placeholder="Enter todo"
-                            // onChange={handleTextInput}
+                                onChange={handleTextInput}
                             />
                         </form>
                     </div>
@@ -59,6 +80,14 @@ const Todo = ({ id, title, listOfTodos, handleDeleteTodo, handleDeleteTask }) =>
                         newTasks={newTasks}
                         handleDeleteTask={handleDeleteTask}
                     /> */}
+                    {listOfTodos.map((task) => (
+                        <Task
+                            key={task.id}
+                            taskId={task.id}
+                            text={task.text}
+                            handleDeleteTask={handleDeleteTask} />
+                    ))}
+
 
                 </div>
                 <div className='TodoFooter'>

@@ -159,6 +159,8 @@ function App() {
           newTodo={newTodo}
           handleDeleteTodo={deleteTodo}
           handleDeleteTask={deleteTask}
+          newTasks={newTasks}
+          setNewTasks={setNewTasks}
         />
       </div>
       <div className='Notes'>

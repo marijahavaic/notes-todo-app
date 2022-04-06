@@ -4,7 +4,7 @@ import { nanoid } from 'nanoid';
 import '../Style/Todo.css';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faClose, faUserInjured } from '@fortawesome/free-solid-svg-icons';
+import { faClose } from '@fortawesome/free-solid-svg-icons';
 import TaskList from './TaskList';
 
 const AddTodo = ({ handleAddTodo, handleCloseNewTodo, newTasks, setNewTasks, handleDeleteTask }) => {
@@ -25,7 +25,8 @@ const AddTodo = ({ handleAddTodo, handleCloseNewTodo, newTasks, setNewTasks, han
         e.preventDefault();
         const newTask = {
             id: nanoid(),
-            text: taskText
+            text: taskText,
+            completed: false
         }
         setNewTasks([newTask, ...newTasks]);
         setTaskText('');
@@ -66,7 +67,10 @@ const AddTodo = ({ handleAddTodo, handleCloseNewTodo, newTasks, setNewTasks, han
                             />
                         </form>
                     </div>
-                    <TaskList newTasks={newTasks} handleDeleteTask={handleDeleteTask} />
+                    <TaskList
+                        newTasks={newTasks}
+                        handleDeleteTask={handleDeleteTask}
+                    />
 
                 </div>
                 <div className='TodoFooter'>
