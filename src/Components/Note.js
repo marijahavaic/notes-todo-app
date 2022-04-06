@@ -5,7 +5,7 @@ import '../Style/Note.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPenToSquare, faTrashCan, faClose } from '@fortawesome/free-solid-svg-icons';
 
-const Note = ({ id, title, text, handleDeleteNote, handleAddNote, handleCloseNewNote }) => {
+const Note = ({ id, title, text, handleDeleteNote, handleEditNote, handleCloseNewNote, handleCloseEdit }) => {
     const [isEditing, setIsEditing] = useState(false);
 
 
@@ -26,10 +26,11 @@ const Note = ({ id, title, text, handleDeleteNote, handleAddNote, handleCloseNew
     const handleSaveEditClick = () => {
         // check if the note isn't empty
         if (editText.trim().length > 0 || editTitle.trim().length > 0) {
-            handleAddNote(editTitle, editText);
+            handleEditNote(id, editTitle, editText);
             // Clear input areas
             setEditTitle('');
             setEditText('');
+            setIsEditing(false);
         }
     }
 
@@ -73,7 +74,7 @@ const Note = ({ id, title, text, handleDeleteNote, handleAddNote, handleCloseNew
                         name={title}
                         onChange={handleTitleEdit}
                     ></textarea>
-                    <FontAwesomeIcon icon={faClose} className="Icon" onClick={handleCloseNewNote} />
+                    <FontAwesomeIcon icon={faClose} className="Icon" onClick={handleCloseEdit} />
                 </div>
                 <div className='NoteBody'>
                     <textarea

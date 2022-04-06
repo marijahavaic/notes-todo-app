@@ -11,62 +11,31 @@ import TodoList from './Components/TodoList';
 function App() {
   const [darkMode, setDarkMode] = useState(false);
   const [searchText, setSearchText] = useState('');
+  // Notes
+  const [editedNote, setEditedNotes] = useState(false);
   const [newNote, setNewNotes] = useState(false);
   const [notes, setNotes] = useState([
-    {
-      id: nanoid(),
-      title: "First note",
-      text: "This is my first note..."
-    },
-    {
-      id: nanoid(),
-      title: "Second note",
-      text: "This is my second note..."
-    },
-    {
-      id: nanoid(),
-      title: "Third note",
-      text: "This is my third note..."
-    }
+    // {
+    //   id: nanoid(),
+    //   title: "First note",
+    //   text: "This is my first note..."
+    // },
+    // {
+    //   id: nanoid(),
+    //   title: "Second note",
+    //   text: "This is my second note..."
+    // },
+    // {
+    //   id: nanoid(),
+    //   title: "Third note",
+    //   text: "This is my third note..."
+    // }
   ]);
+  // Todos
   const [newTodo, setNewTodos] = useState(false);
-  const [todos, setTodos] = useState([
-    {
-      id: nanoid(),
-      title: "First Todo List",
-      listOfTodos: [
-        {
-          id: nanoid(),
-          text: 'Buy groceries',
-        },
-        {
-          id: nanoid(),
-          text: 'walk the dog'
-        }
-      ]
-    },
-    {
-      id: nanoid(),
-      title: "Second Todo List",
-      listOfTodos:
-        [
-          {
-            id: nanoid(),
-            text: 'Shopping',
-          },
-          {
-            id: nanoid(),
-            text: 'Clean'
-          }
-        ]
-    }
-  ])
-  const [newTasks, setNewTasks] = useState([
-    {
-      id: nanoid(),
-      text: 'Wash the dishes'
-    }
-  ]);
+  const [todos, setTodos] = useState([])
+  // Tasks
+  const [newTasks, setNewTasks] = useState([]);
 
 
   // Retrive notes from local storage
@@ -110,6 +79,23 @@ function App() {
     setNewNotes(false);
   };
 
+  const editNote = (id, title, text) => {
+    const updatedNote = {
+      id: id,
+      title: title,
+      text: text
+    }
+
+    const updatedNotes = notes.map(note => {
+      if (note.id = id) {
+        return { ...notes, updatedNote }
+      }
+    });
+    setNotes(updatedNotes);
+
+    console.log(updatedNote, updatedNotes)
+  }
+
   const addTodo = (title, listOfTodos) => {
     const newTodo = {
       id: nanoid(),
@@ -152,6 +138,10 @@ function App() {
     setNewTodos(false);
   }
 
+  const closeEditNote = () => {
+    setEditedNotes(false);
+  }
+
   return (
     <div className={`${darkMode ? 'DarkMode' : 'App'}`}>
       <Header
@@ -189,8 +179,11 @@ function App() {
         <NotesList
           notes={notes.filter((note) => note.text.toLowerCase().includes(searchText) || note.title.toLowerCase().includes(searchText))}
           handleAddNote={addNote}
+          handleEditNote={editNote}
           handleDeleteNote={deleteNote}
-          newNote={newNote} />
+          newNote={newNote}
+          handleCloseEdit={closeEditNote}
+        />
       </div>
     </div>
   );
