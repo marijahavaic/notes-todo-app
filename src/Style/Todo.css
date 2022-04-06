@@ -122,3 +122,8 @@ button .Close {
 .ToDoCheckBox {
     margin-top: 3px;
 }
+
+.Checked {
+    opacity: 70%;
+    text-decoration-line: line-through;
+}
