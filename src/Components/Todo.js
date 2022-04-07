@@ -46,20 +46,15 @@ const Todo = ({ id, title, listOfTodos, handleDeleteTodo, handleDeleteTask, hand
         setIsEditing(false);
     }
 
-    const oldTasks = () => {
-        setNewTasks(listOfTodos);
-    }
-
-
 
     // save note with calling addNote function from App.js
     const handleSaveClick = () => {
         // check if the note isn't empty
         if (newTasks.length > 0 || editTitle.trim().length > 0) {
-
-            console.log(newTasks);
             handleEditTodos(id, editTitle, newTasks);
-            oldTasks();
+            // Clear input areas
+
+            setIsEditing(false);
         }
     }
 
@@ -99,7 +94,7 @@ const Todo = ({ id, title, listOfTodos, handleDeleteTodo, handleDeleteTask, hand
                         handleDeleteTask={handleDeleteTask}
                         isEditing={true}
                     />
-                    {listOfTodos.map((task) => (
+                    {/* {listOfTodos.map((task) => (
                         <Task
                             key={task.id}
                             taskId={task.id}
@@ -107,7 +102,7 @@ const Todo = ({ id, title, listOfTodos, handleDeleteTodo, handleDeleteTask, hand
                             handleDeleteTask={handleDeleteTask}
                             isEditing={true}
                         />
-                    ))}
+                    ))} */}
                 </div>
                 <div className='TodoFooter'>
                     <button className='saveTodo'
