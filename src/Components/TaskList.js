@@ -4,7 +4,6 @@ import '../Style/TodoList.css';
 import Task from './Task';
 
 const TaskList = ({ newTasks, handleDeleteTask, isEditing }) => {
-    console.log(newTasks)
     return (
         <div className="TaskList">
             {newTasks.map((task) => (

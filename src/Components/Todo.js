@@ -10,7 +10,7 @@ import Task from './Task';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPenToSquare, faTrashCan, faClose } from '@fortawesome/free-solid-svg-icons';
 
-const Todo = ({ id, title, listOfTodos, handleDeleteTodo, handleDeleteTask, }) => {
+const Todo = ({ id, title, listOfTodos, handleDeleteTodo, handleDeleteTask, handleEditTodos }) => {
     const [isEditing, setIsEditing] = useState(false);
     const [editTitle, setEditTitle] = useState(title);
     const [taskText, setTaskText] = useState('');
@@ -44,6 +44,23 @@ const Todo = ({ id, title, listOfTodos, handleDeleteTodo, handleDeleteTask, }) =
 
     const closeEditTodo = () => {
         setIsEditing(false);
+    }
+
+    const oldTasks = () => {
+        setNewTasks(listOfTodos);
+    }
+
+
+
+    // save note with calling addNote function from App.js
+    const handleSaveClick = () => {
+        // check if the note isn't empty
+        if (newTasks.length > 0 || editTitle.trim().length > 0) {
+
+            console.log(newTasks);
+            handleEditTodos(id, editTitle, newTasks);
+            oldTasks();
+        }
     }
 
     const editTodo = (
@@ -94,7 +111,7 @@ const Todo = ({ id, title, listOfTodos, handleDeleteTodo, handleDeleteTask, }) =
                 </div>
                 <div className='TodoFooter'>
                     <button className='saveTodo'
-                    // onClick={handleSaveClick}
+                        onClick={handleSaveClick}
                     >Save</button>
                 </div>
             </div>

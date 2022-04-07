@@ -87,8 +87,6 @@ function App() {
       return note;
     });
     setNotes(updatedNotes);
-
-    console.log(updatedNotes, notes)
   }
 
   const addTodo = (title, listOfTodos) => {
@@ -100,6 +98,16 @@ function App() {
     const newTodos = [newTodo, ...todos];
     setTodos(newTodos);
     setNewTodos(false);
+  };
+
+  const editTodo = (id, title, listOfTodos) => {
+    const updatedTodos = todos.map(todo => {
+      if (todo.id === id) {
+        return { ...todo, title, listOfTodos }
+      }
+      return todo;
+    });
+    setTodos(updatedTodos);
   };
 
   const addNoteComponent = (e) => {
@@ -161,6 +169,7 @@ function App() {
           handleDeleteTask={deleteTask}
           newTasks={newTasks}
           setNewTasks={setNewTasks}
+          handleEditTodos={editTodo}
         />
       </div>
       <div className='Notes'>
