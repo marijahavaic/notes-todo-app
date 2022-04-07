@@ -3,7 +3,8 @@ import React from 'react';
 import '../Style/TodoList.css';
 import Task from './Task';
 
-const TaskList = ({ newTasks, handleDeleteTask }) => {
+const TaskList = ({ newTasks, handleDeleteTask, isEditing }) => {
+    console.log(newTasks)
     return (
         <div className="TaskList">
             {newTasks.map((task) => (
@@ -12,7 +13,9 @@ const TaskList = ({ newTasks, handleDeleteTask }) => {
                     id={task.id}
                     text={task.text}
                     handleDeleteTask={handleDeleteTask}
+                    isEditing={isEditing}
                 />
+
             ))
             }
         </div>

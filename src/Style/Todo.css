@@ -53,20 +53,26 @@
     padding-left: 8px;
 }
 
-.Icon:active {
+.Icon:active,
+.Edit:active {
     transform: scale(0.95);
 }
 
 .Icon:hover,
-.IconTask:hover {
+.Edit:hover {
     color: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
 }
 
 .IconTask {
+    display: none;
+}
+
+.Edit {
+    display: inline-block;
     color: rgb(205, 215, 224);
     margin-left: 10px;
 }
-
 
 .Todo .TodoHeader textarea {
     background-color: transparent;

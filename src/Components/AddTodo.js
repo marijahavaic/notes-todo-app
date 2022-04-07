@@ -64,12 +64,14 @@ const AddTodo = ({ handleAddTodo, handleCloseNewTodo, newTasks, setNewTasks, han
                                 value={taskText}
                                 placeholder="Enter todo"
                                 onChange={handleTextInput}
+                                isEditing={true}
                             />
                         </form>
                     </div>
                     <TaskList
                         newTasks={newTasks}
                         handleDeleteTask={handleDeleteTask}
+                        isEditing={true}
                     />
 
                 </div>

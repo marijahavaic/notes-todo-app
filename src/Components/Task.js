@@ -5,7 +5,7 @@ import '../Style/Todo.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
-const Task = ({ id, text, handleDeleteTask }) => {
+const Task = ({ id, text, handleDeleteTask, isEditing }) => {
     const [checked, setChecked] = useState(false);
 
     const handleChange = () => {
@@ -24,7 +24,7 @@ const Task = ({ id, text, handleDeleteTask }) => {
                     {text}
                 </label>
 
-                <FontAwesomeIcon onClick={() => handleDeleteTask(id)} icon={faTrash} className="IconTask" />
+                <FontAwesomeIcon onClick={() => handleDeleteTask(id)} icon={faTrash} className={`${isEditing ? "Edit" : "IconTask"}`} />
 
             </div>
         </div>

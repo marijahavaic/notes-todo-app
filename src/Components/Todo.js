@@ -10,10 +10,11 @@ import Task from './Task';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPenToSquare, faTrashCan, faClose } from '@fortawesome/free-solid-svg-icons';
 
-const Todo = ({ id, title, listOfTodos, handleDeleteTodo, handleDeleteTask, newTasks, setNewTasks }) => {
+const Todo = ({ id, title, listOfTodos, handleDeleteTodo, handleDeleteTask, }) => {
     const [isEditing, setIsEditing] = useState(false);
     const [editTitle, setEditTitle] = useState(title);
     const [taskText, setTaskText] = useState('');
+    const [newTasks, setNewTasks] = useState([]);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -76,19 +77,20 @@ const Todo = ({ id, title, listOfTodos, handleDeleteTodo, handleDeleteTask, newT
                             />
                         </form>
                     </div>
-                    {/* <TaskList
+                    <TaskList
                         newTasks={newTasks}
                         handleDeleteTask={handleDeleteTask}
-                    /> */}
+                        isEditing={true}
+                    />
                     {listOfTodos.map((task) => (
                         <Task
                             key={task.id}
                             taskId={task.id}
                             text={task.text}
-                            handleDeleteTask={handleDeleteTask} />
+                            handleDeleteTask={handleDeleteTask}
+                            isEditing={true}
+                        />
                     ))}
-
-
                 </div>
                 <div className='TodoFooter'>
                     <button className='saveTodo'
