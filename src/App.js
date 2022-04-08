@@ -13,23 +13,8 @@ function App() {
   const [searchText, setSearchText] = useState('');
   // Notes
   const [newNote, setNewNotes] = useState(false);
-  const [notes, setNotes] = useState([
-    // {
-    //   id: nanoid(),
-    //   title: "First note",
-    //   text: "This is my first note..."
-    // },
-    // {
-    //   id: nanoid(),
-    //   title: "Second note",
-    //   text: "This is my second note..."
-    // },
-    // {
-    //   id: nanoid(),
-    //   title: "Third note",
-    //   text: "This is my third note..."
-    // }
-  ]);
+  const [notes, setNotes] = useState([]);
+  const [isNote, setIsNote] = useState(false);
   // Todos
   const [newTodo, setNewTodos] = useState(false);
   const [todos, setTodos] = useState([])

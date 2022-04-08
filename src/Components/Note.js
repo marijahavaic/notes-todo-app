@@ -4,6 +4,7 @@ import '../Style/Note.css'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPenToSquare, faTrashCan, faClose } from '@fortawesome/free-solid-svg-icons';
+import EditTextNote from './EditTextNote';
 
 const Note = ({ id, title, text, handleDeleteNote, handleEditNote, handleCloseEdit }) => {
     const [isEditing, setIsEditing] = useState(false);
@@ -56,16 +57,11 @@ const Note = ({ id, title, text, handleDeleteNote, handleEditNote, handleCloseEd
                     ></textarea>
                     <FontAwesomeIcon icon={faClose} className="Icon" onClick={closeEditNote} />
                 </div>
-                <div className='NoteBody'>
-                    <textarea
-                        rows={11}
-                        cols={31}
-                        placeholder="Type to add a note"
-                        value={editText}
-                        name={text}
-                        onChange={handleTextEdit}
-                    ></textarea>
-                </div>
+                <EditTextNote
+                    text={text}
+                    editText={editText}
+                    handleTextEdit={handleTextEdit}
+                />
                 <div className='NoteFooter'>
                     <small>300 Remaining</small>
                     <button className='save' onClick={handleSaveEditClick}>Save</button>
