@@ -42,7 +42,7 @@ function App() {
     const savedNotes = JSON.parse(
       localStorage.getItem('react-notes-app-data')
     );
-
+    // Retrive todos from local storage
     const savedTodos = JSON.parse(
       localStorage.getItem('react-todos-app-data')
     );
@@ -62,6 +62,7 @@ function App() {
     );
   }, [notes]);
 
+  // Storing note data in local storage
   useEffect(() => {
     localStorage.setItem('react-todos-app-data', JSON.stringify(todos)
     );
@@ -181,6 +182,7 @@ function App() {
         <NotesList
           notes={notes.filter((note) => note.text.toLowerCase().includes(searchText) || note.title.toLowerCase().includes(searchText))}
           handleAddNote={addNote}
+          setNotes={setNotes}
           handleEditNote={editNote}
           handleDeleteNote={deleteNote}
           newNote={newNote}
