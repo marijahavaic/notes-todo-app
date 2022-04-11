@@ -35,7 +35,7 @@ const Note = ({ id, title, text, handleDeleteNote, handleEditNote, handleCloseEd
     }
 
     const toggleForm = () => {
-        setIsEditing(!isEditing);
+        setIsEditing(true);
     }
 
     const closeEditNote = () => {
