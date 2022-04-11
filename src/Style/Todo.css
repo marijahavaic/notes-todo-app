@@ -81,12 +81,20 @@
 .Todo .TodoBody {
     margin: 16px 16px;
     text-align: justify;
+    word-wrap: break-word;
 }
 
 .Todo input {
     border: none;
     background-color: transparent;
     color: #000;
+    font-size: 18px;
+}
+
+.DarkMode .Todo input {
+    border: none;
+    background-color: transparent;
+    color: rgb(205, 215, 224);
     font-size: 18px;
 }
 
