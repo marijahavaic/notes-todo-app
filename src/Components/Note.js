@@ -28,7 +28,6 @@ const Note = ({ id, title, text, handleDeleteNote, handleEditNote, handleCloseEd
         // check if the note isn't empty
         if (editText.trim().length > 0 || editTitle.trim().length > 0) {
             handleEditNote(id, editTitle, editText);
-            // Clear input areas
             setEditTitle(editTitle);
             setEditText(editText);
             setIsEditing(false);

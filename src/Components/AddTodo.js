@@ -58,7 +58,7 @@ const AddTodo = ({ handleAddTodo, handleCloseNewTodo, newTasks, setNewTasks, han
                 </div>
                 <div className='TodoBody'>
                     <div className='TodoEntry'>
-                        <form onSubmit={handleSubmit}>
+                        <form onSubmit={handleSubmit} >
                             <input
                                 type="text"
                                 value={taskText}

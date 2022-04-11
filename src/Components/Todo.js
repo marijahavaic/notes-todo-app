@@ -4,18 +4,17 @@ import '../Style/Todo.css';
 
 import { nanoid } from 'nanoid';
 
-import TaskList from './TaskList';
 import Task from './Task';
 import EditTodo from './EditTodo';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPenToSquare, faTrashCan, faClose } from '@fortawesome/free-solid-svg-icons';
 
-const Todo = ({ id, title, listOfTodos, handleDeleteTodo, handleDeleteTask, handleEditTodos }) => {
+const Todo = ({ id, title, tasks, handleDeleteTodo, handleDeleteTask, handleEditTodos, newTasks, setNewTasks }) => {
     const [isEditing, setIsEditing] = useState(false);
     const [editTitle, setEditTitle] = useState(title);
     const [taskText, setTaskText] = useState('');
-    const [newTasks, setNewTasks] = useState([]);
+    // const [newTasks, setNewTasks] = useState([]);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -39,14 +38,14 @@ const Todo = ({ id, title, listOfTodos, handleDeleteTodo, handleDeleteTask, hand
         setTaskText(e.target.value);
     }
 
-    const toggleForm = () => {
-        setIsEditing(!isEditing);
+    const handleEditClick = () => {
+        setIsEditing(true);
+        setNewTasks(tasks);
     }
 
     const closeEditTodo = () => {
         setIsEditing(false);
     }
-
 
     // save note with calling addNote function from App.js
     const handleSaveClick = () => {
@@ -99,7 +98,7 @@ const Todo = ({ id, title, listOfTodos, handleDeleteTodo, handleDeleteTask, hand
                 <h3>{title}</h3>
                 <div className='Icons'>
                     <FontAwesomeIcon
-                        onClick={() => toggleForm()}
+                        onClick={() => handleEditClick()}
                         icon={faPenToSquare}
                         className="Icon"
                     />
@@ -111,7 +110,7 @@ const Todo = ({ id, title, listOfTodos, handleDeleteTodo, handleDeleteTask, hand
                 </div>
             </div>
             <div className='TodoBody'>
-                {listOfTodos.map((task) => (
+                {tasks.map((task) => (
                     <Task
                         key={task.id}
                         taskId={task.id}

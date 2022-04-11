@@ -3,9 +3,8 @@ import React from 'react';
 import Todo from './Todo';
 
 import '../Style/TodoList.css';
-import AddTodo from './AddTodo';
 
-const TodoList = ({ todos, handleDeleteTodo, newTodo, handleAddTodo, handleDeleteTask, handleEditTodos }) => {
+const TodoList = ({ todos, handleDeleteTodo, handleDeleteTask, handleEditTodos, newTasks, setNewTasks }) => {
     return (
         <div className="TodoList">
             {todos.map((todo) => (
@@ -13,10 +12,12 @@ const TodoList = ({ todos, handleDeleteTodo, newTodo, handleAddTodo, handleDelet
                     key={todo.id}
                     id={todo.id}
                     title={todo.title}
-                    listOfTodos={todo.listOfTodos}
+                    tasks={todo.tasks}
                     handleDeleteTodo={handleDeleteTodo}
                     handleDeleteTask={handleDeleteTask}
                     handleEditTodos={handleEditTodos}
+                    newTasks={newTasks}
+                    setNewTasks={setNewTasks}
                 />
             ))}
         </div>

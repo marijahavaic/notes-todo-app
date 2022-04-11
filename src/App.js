@@ -14,12 +14,13 @@ function App() {
   // Notes
   const [newNote, setNewNotes] = useState(false);
   const [notes, setNotes] = useState([]);
-  const [isNote, setIsNote] = useState(false);
+
   // Todos
   const [newTodo, setNewTodos] = useState(false);
   const [todos, setTodos] = useState([])
   // Tasks
   const [newTasks, setNewTasks] = useState([]);
+  const [tasks, setTasks] = useState([]);
 
 
   // Retrive notes from local storage
@@ -74,21 +75,21 @@ function App() {
     setNotes(updatedNotes);
   }
 
-  const addTodo = (title, listOfTodos) => {
+  const addTodo = (title, newTasks) => {
     const newTodo = {
       id: nanoid(),
       title: title,
-      listOfTodos: listOfTodos
+      tasks: newTasks
     }
     const newTodos = [newTodo, ...todos];
     setTodos(newTodos);
     setNewTodos(false);
   };
 
-  const editTodo = (id, title, listOfTodos) => {
+  const editTodo = (id, title, tasks) => {
     const updatedTodos = todos.map(todo => {
       if (todo.id === id) {
-        return { ...todo, title, listOfTodos }
+        return { ...todo, title, tasks }
       }
       return todo;
     });
@@ -174,6 +175,6 @@ function App() {
       </div>
     </div>
   );
-}
+};
 
 export default App;
