@@ -29,8 +29,8 @@ const Note = ({ id, title, text, handleDeleteNote, handleEditNote, handleCloseEd
         if (editText.trim().length > 0 || editTitle.trim().length > 0) {
             handleEditNote(id, editTitle, editText);
             // Clear input areas
-            setEditTitle('');
-            setEditText('');
+            setEditTitle(editTitle);
+            setEditText(editText);
             setIsEditing(false);
         }
     }

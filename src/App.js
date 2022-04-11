@@ -45,13 +45,13 @@ function App() {
   useEffect(() => {
     localStorage.setItem('react-notes-app-data', JSON.stringify(notes)
     );
-  }, [notes]);
+  }, [notes]); // [notes] Only re-run the effect if notes changes
 
   // Storing note data in local storage
   useEffect(() => {
     localStorage.setItem('react-todos-app-data', JSON.stringify(todos)
     );
-  }, [todos]);
+  }, [todos]); // [todos] Only re-run the effect if notes changes
 
   const addNote = (title, text) => {
     const newNote = {
@@ -65,7 +65,6 @@ function App() {
   };
 
   const editNote = (id, title, text) => {
-
     const updatedNotes = notes.map(note => {
       if (note.id === id) {
         return { ...note, title, text }

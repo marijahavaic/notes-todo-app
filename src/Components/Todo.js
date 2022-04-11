@@ -53,8 +53,8 @@ const Todo = ({ id, title, listOfTodos, handleDeleteTodo, handleDeleteTask, hand
         // check if the note isn't empty
         if (newTasks.length > 0 || editTitle.trim().length > 0) {
             handleEditTodos(id, editTitle, newTasks);
-            // Clear input areas
-
+            setEditTitle(editTitle);
+            setNewTasks(newTasks);
             setIsEditing(false);
         }
     }

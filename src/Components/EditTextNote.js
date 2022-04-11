@@ -7,7 +7,7 @@ const EditTextNote = ({ text, editText, handleTextEdit }) => {
                 <textarea
                     rows={11}
                     cols={31}
-                    placeholder="Type to add a note"
+                    // placeholder="Type to add a note"
                     value={editText}
                     name={text}
                     onChange={handleTextEdit}
