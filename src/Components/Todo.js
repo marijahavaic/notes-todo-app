@@ -6,6 +6,7 @@ import { nanoid } from 'nanoid';
 
 import TaskList from './TaskList';
 import Task from './Task';
+import EditTodo from './EditTodo';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPenToSquare, faTrashCan, faClose } from '@fortawesome/free-solid-svg-icons';
@@ -76,34 +77,13 @@ const Todo = ({ id, title, listOfTodos, handleDeleteTodo, handleDeleteTask, hand
                         onClick={closeEditTodo}
                     />
                 </div>
-                <div className='TodoBody'>
-                    <div className='TodoEntry'>
-                        <form
-                            onSubmit={handleSubmit}
-                        >
-                            <input
-                                type="text"
-                                value={taskText}
-                                placeholder="Enter todo"
-                                onChange={handleTextInput}
-                            />
-                        </form>
-                    </div>
-                    <TaskList
-                        newTasks={newTasks}
-                        handleDeleteTask={handleDeleteTask}
-                        isEditing={true}
-                    />
-                    {/* {listOfTodos.map((task) => (
-                        <Task
-                            key={task.id}
-                            taskId={task.id}
-                            text={task.text}
-                            handleDeleteTask={handleDeleteTask}
-                            isEditing={true}
-                        />
-                    ))} */}
-                </div>
+                <EditTodo
+                    handleSubmit={handleSubmit}
+                    handleTextInput={handleTextInput}
+                    newTasks={newTasks}
+                    taskText={taskText}
+                    handleDeleteTask={handleDeleteTask}
+                />
                 <div className='TodoFooter'>
                     <button className='saveTodo'
                         onClick={handleSaveClick}
