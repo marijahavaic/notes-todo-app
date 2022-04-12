@@ -40,13 +40,13 @@ function App() {
     }
   }, [])
 
-  // Storing note data in local storage
+  // Storing notes data in local storage
   useEffect(() => {
     localStorage.setItem('react-notes-app-data', JSON.stringify(notes)
     );
   }, [notes]); // [notes] Only re-run the effect if notes changes
 
-  // Storing note data in local storage
+  // Storing todos data in local storage
   useEffect(() => {
     localStorage.setItem('react-todos-app-data', JSON.stringify(todos)
     );
@@ -100,6 +100,7 @@ function App() {
 
   const addTodoComponent = (e) => {
     setNewTodos(!newTodo);
+    setNewTasks([])
   }
 
   const deleteNote = (id) => {
@@ -142,6 +143,8 @@ function App() {
           newTasks={newTasks}
           setNewTasks={setNewTasks}
           handleDeleteTask={deleteTask}
+          tasks={tasks}
+          setTasks={setTasks}
         />
         }
         <TodoList

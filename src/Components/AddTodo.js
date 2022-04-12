@@ -7,10 +7,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClose } from '@fortawesome/free-solid-svg-icons';
 import TaskList from './TaskList';
 
-const AddTodo = ({ handleAddTodo, handleCloseNewTodo, newTasks, setNewTasks, handleDeleteTask }) => {
+const AddTodo = ({ handleAddTodo, handleCloseNewTodo, newTasks, setNewTasks, handleDeleteTask, tasks, setTasks }) => {
     const [todoTitle, setTodoTitle] = useState('');
     const [taskText, setTaskText] = useState('');
-    // const [taskCompleted, setTaskCompleted] = useState(false);
 
     // set todo title
     const handleTitleChange = (e) => {
@@ -21,11 +20,13 @@ const AddTodo = ({ handleAddTodo, handleCloseNewTodo, newTasks, setNewTasks, han
     const handleTextInput = (e) => {
         setTaskText(e.target.value);
     }
-
-    // // set todo item
-    // const handleCompleted = (e) => {
-    //     setTaskCompleted(!taskCompleted);
-    // }
+    // Repetative code that wasn't passed on AddTodo - resolve with useContext!
+    const completeTask = (index) => {
+        const newTasksArr = [...newTasks];
+        newTasksArr[index].completed = !newTasks[index].completed;
+        console.log(newTasksArr[index]);
+        setTasks(newTasksArr);
+    };
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -76,6 +77,7 @@ const AddTodo = ({ handleAddTodo, handleCloseNewTodo, newTasks, setNewTasks, han
                     <TaskList
                         newTasks={newTasks}
                         handleDeleteTask={handleDeleteTask}
+                        completeTask={completeTask}
                     />
 
                 </div>
