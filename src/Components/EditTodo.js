@@ -2,7 +2,7 @@ import React from 'react';
 
 import TaskList from './TaskList';
 
-function EditTodo({ handleSubmit, handleTextInput, taskText, newTasks, handleDeleteTask }) {
+function EditTodo({ handleSubmit, handleTextInput, taskText, newTasks, handleDeleteTask, completeTask }) {
     return (
         <div className='EditTodo'>
             <div className='TodoBody'>
@@ -22,6 +22,7 @@ function EditTodo({ handleSubmit, handleTextInput, taskText, newTasks, handleDel
                     newTasks={newTasks}
                     handleDeleteTask={handleDeleteTask}
                     isEditing={true}
+                    completeTask={completeTask}
                 />
             </div>
         </div>

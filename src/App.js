@@ -21,7 +21,6 @@ function App() {
   // Tasks
   const [newTasks, setNewTasks] = useState([]);
   const [tasks, setTasks] = useState([]);
-
   // Retrive notes from local storage
   useEffect(() => {
     const savedNotes = JSON.parse(
@@ -117,7 +116,6 @@ function App() {
     const newTasksArr = newTasks.filter((task) => task.id !== id);
     setNewTasks(newTasksArr);
   }
-
 
   const closeNewNote = () => {
     setNewNotes(false);

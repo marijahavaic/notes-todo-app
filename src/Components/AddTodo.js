@@ -10,6 +10,7 @@ import TaskList from './TaskList';
 const AddTodo = ({ handleAddTodo, handleCloseNewTodo, newTasks, setNewTasks, handleDeleteTask }) => {
     const [todoTitle, setTodoTitle] = useState('');
     const [taskText, setTaskText] = useState('');
+    // const [taskCompleted, setTaskCompleted] = useState(false);
 
     // set todo title
     const handleTitleChange = (e) => {
@@ -20,6 +21,11 @@ const AddTodo = ({ handleAddTodo, handleCloseNewTodo, newTasks, setNewTasks, han
     const handleTextInput = (e) => {
         setTaskText(e.target.value);
     }
+
+    // // set todo item
+    // const handleCompleted = (e) => {
+    //     setTaskCompleted(!taskCompleted);
+    // }
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -64,14 +70,12 @@ const AddTodo = ({ handleAddTodo, handleCloseNewTodo, newTasks, setNewTasks, han
                                 value={taskText}
                                 placeholder="Enter todo"
                                 onChange={handleTextInput}
-                                isEditing={true}
                             />
                         </form>
                     </div>
                     <TaskList
                         newTasks={newTasks}
                         handleDeleteTask={handleDeleteTask}
-                        isEditing={true}
                     />
 
                 </div>

@@ -10,11 +10,10 @@ import EditTodo from './EditTodo';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPenToSquare, faTrashCan, faClose } from '@fortawesome/free-solid-svg-icons';
 
-const Todo = ({ id, title, tasks, handleDeleteTodo, handleDeleteTask, handleEditTodos, newTasks, setNewTasks }) => {
+const Todo = ({ id, title, tasks, handleDeleteTodo, handleDeleteTask, handleEditTodos, newTasks, setNewTasks, setTasks }) => {
     const [isEditing, setIsEditing] = useState(false);
     const [editTitle, setEditTitle] = useState(title);
     const [taskText, setTaskText] = useState('');
-    // const [newTasks, setNewTasks] = useState([]);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -46,6 +45,13 @@ const Todo = ({ id, title, tasks, handleDeleteTodo, handleDeleteTask, handleEdit
     const closeEditTodo = () => {
         setIsEditing(false);
     }
+
+    const completeTask = (index) => {
+        const newTasks = [...tasks];
+        newTasks[index].completed = !newTasks[index].completed;
+        console.log(newTasks[index]);
+        setTasks(newTasks);
+    };
 
     // save note with calling addNote function from App.js
     const handleSaveClick = () => {
@@ -82,6 +88,7 @@ const Todo = ({ id, title, tasks, handleDeleteTodo, handleDeleteTask, handleEdit
                     newTasks={newTasks}
                     taskText={taskText}
                     handleDeleteTask={handleDeleteTask}
+                    completeTask={completeTask}
                 />
                 <div className='TodoFooter'>
                     <button className='saveTodo'
@@ -110,12 +117,16 @@ const Todo = ({ id, title, tasks, handleDeleteTodo, handleDeleteTask, handleEdit
                 </div>
             </div>
             <div className='TodoBody'>
-                {tasks.map((task) => (
+                {tasks.map((task, index) => (
                     <Task
                         key={task.id}
                         taskId={task.id}
                         text={task.text}
-                        handleDeleteTask={handleDeleteTask} />
+                        index={index}
+                        completed={task.completed}
+                        handleDeleteTask={handleDeleteTask}
+                        completeTask={completeTask}
+                    />
                 ))}
             </div>
         </div>

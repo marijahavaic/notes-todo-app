@@ -4,7 +4,7 @@ import Todo from './Todo';
 
 import '../Style/TodoList.css';
 
-const TodoList = ({ todos, handleDeleteTodo, handleDeleteTask, handleEditTodos, newTasks, setNewTasks, handleCheckTask }) => {
+const TodoList = ({ todos, handleDeleteTodo, handleDeleteTask, handleEditTodos, newTasks, setNewTasks, handleCheckTask, setTasks }) => {
     return (
         <div className="TodoList">
             {todos.map((todo) => (
@@ -18,6 +18,7 @@ const TodoList = ({ todos, handleDeleteTodo, handleDeleteTask, handleEditTodos, 
                     handleEditTodos={handleEditTodos}
                     newTasks={newTasks}
                     setNewTasks={setNewTasks}
+                    setTasks={setTasks}
                     handleCheckTask={handleCheckTask}
                 />
             ))}

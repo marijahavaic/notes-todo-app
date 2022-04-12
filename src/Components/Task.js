@@ -1,24 +1,21 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import '../Style/Todo.css';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
-const Task = ({ id, text, handleDeleteTask, isEditing }) => {
-    const [checked, setChecked] = useState(false);
 
-    const handleChange = () => {
-        setChecked(!checked);
-    }
+const Task = ({ id, text, index, completed, handleDeleteTask, isEditing, completeTask }) => {
     return (
         <div className="Task" key={id}>
-            <div className={`${checked ? 'Checked' : 'ToDoCheckBox'}`} key={id}>
+            <div className={`${completed ? 'Checked' : 'ToDoCheckBox'}`} key={id}>
                 <label>
                     <input
                         type="checkbox"
-                        checked={checked}
-                        onChange={handleChange}
+                        value={completed}
+                        checked={completed}
+                        onChange={() => completeTask(index)}
                         style={{ marginRight: '4px' }}
                     />
                     {text}
