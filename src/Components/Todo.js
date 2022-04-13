@@ -15,6 +15,7 @@ const Todo = ({ id, title, tasks, handleDeleteTodo, handleDeleteTask, handleEdit
     const [editTitle, setEditTitle] = useState(title);
     const [taskText, setTaskText] = useState('');
 
+
     const handleSubmit = (e) => {
         e.preventDefault();
         const newTask = {
@@ -49,7 +50,6 @@ const Todo = ({ id, title, tasks, handleDeleteTodo, handleDeleteTask, handleEdit
     const completeTask = (index) => {
         const newTasks = [...tasks];
         newTasks[index].completed = !newTasks[index].completed;
-        console.log(newTasks[index]);
         setTasks(newTasks);
     };
 

@@ -2,10 +2,10 @@
   text-align: center;
   min-height: 100vh;
   height: auto;
-  background: rgb(250,184,213);
-  background: linear-gradient(7deg, rgba(250,184,213,1) 0%, rgba(107,170,244,1) 100%);
+  background: rgb(250, 184, 213);
+  background: linear-gradient(7deg, rgba(250, 184, 213, 1) 0%, rgba(107, 170, 244, 1) 100%);
   display: flex;
-  flex-direction: column;  
+  flex-direction: column;
   padding: 0 15px;
 }
 
@@ -15,7 +15,7 @@
   height: auto;
   background-color: rgba(0, 0, 0, 0.9);
   display: flex;
-  flex-direction: column;  
+  flex-direction: column;
   padding: 0 15px;
 }
 
@@ -25,13 +25,13 @@
   align-items: flex-start;
 }
 
- button {
+button {
   cursor: pointer;
   border: none;
   margin: 15px;
   padding: 10px;
   border-radius: 5px;
-  background-color: rgba(250,184,213,1);
+  background-color: rgba(250, 184, 213, 1);
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   font-family: Poppins, sans-serif;
   font-weight: 600;
@@ -46,14 +46,15 @@ button:active {
 }
 
 button:hover {
-  color: rgba(107,170,244,1);
+  color: rgba(107, 170, 244, 1);
 }
 
 .DarkMode button:hover {
-  background-color: rgba(107,170,244,0.5);
+  background-color: rgba(107, 170, 244, 0.5);
 }
 
-.Notes, .Todos {
+.Notes,
+.Todos {
   display: flex;
 }
 
@@ -108,6 +109,7 @@ button:hover {
   background-color: transparent;
   color: aliceblue;
   font-size: 18px;
+  width: 100%;
 }
 
 .DarkMode .Header .Search input {
@@ -127,6 +129,7 @@ button:hover {
 .Header .Search input:focus {
   outline: none;
 }
+
 /* 
 .Header .HeaderTitle button {
   background-color: rgba(107,170,244,1);
@@ -173,5 +176,5 @@ button:hover {
 }
 
 .DarkButton:hover {
-  color: rgba(0,0,0,0.5);
+  color: rgba(0, 0, 0, 0.5);
 }

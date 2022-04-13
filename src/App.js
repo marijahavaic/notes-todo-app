@@ -9,7 +9,9 @@ import Header from './Components/Header';
 import TodoList from './Components/TodoList';
 
 function App() {
+  // Dark Mode
   const [darkMode, setDarkMode] = useState(false);
+  // Search notes and todos
   const [searchText, setSearchText] = useState('');
   // Notes
   const [newNote, setNewNotes] = useState(false);
@@ -51,6 +53,7 @@ function App() {
     localStorage.setItem('react-todos-app-data', JSON.stringify(todos)
     );
   }, [todos]); // [todos] Only re-run the effect if notes changes
+
 
   const addNote = (title, text) => {
     const newNote = {
@@ -148,7 +151,7 @@ function App() {
         />
         }
         <TodoList
-          todos={todos.filter((todo) => todo.title.toLocaleLowerCase().includes(searchText))}
+          todos={todos.filter((todo) => todo.title.toLowerCase().includes(searchText) || todo.tasks.filter((task) => task.text.toLowerCase().includes(searchText)))}
           handleAddTodo={addTodo}
           newTodo={newTodo}
           handleDeleteTodo={deleteTodo}
