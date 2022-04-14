@@ -4,9 +4,14 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import {NotesProvider} from './Components/NotesListContext'; 
+
+
 ReactDOM.render(
   <React.StrictMode>
+     <NotesProvider>
     <App />
+    </NotesProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

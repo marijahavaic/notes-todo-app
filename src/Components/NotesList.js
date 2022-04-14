@@ -7,7 +7,7 @@ import '../Style/NotesList.css';
 import { NotesListContext } from './NotesListContext';
 
 const NotesList = ({ handleDeleteNote, handleEditNote, handleCloseEdit }) => {
-    const [notes, setNotes] = useContext(NotesListContext)
+    const [notes] = useContext(NotesListContext)
     return (
         <div className="NotesList">
             {notes.map((note) => (

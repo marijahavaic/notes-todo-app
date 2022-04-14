@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { nanoid } from 'nanoid';
 
 import './App.css';
@@ -9,7 +9,7 @@ import Header from './Components/Header';
 import TodoList from './Components/TodoList';
 
 
-import {NotesProvider, NotesListContext} from './Components/NotesListContext'; 
+import { NotesListContext} from './Components/NotesListContext'; 
 
 function App() {
   // Dark Mode
@@ -133,7 +133,7 @@ function App() {
   }
 
   return (
-    <NotesProvider>
+   
     <div className={`${darkMode ? 'DarkMode' : 'App'}`}>
       <Header
         handleAddNote={addNoteComponent} 
@@ -185,7 +185,6 @@ function App() {
       </div>
       
     </div>
-    </NotesProvider>
   );
 };
 
