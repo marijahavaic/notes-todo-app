@@ -15,7 +15,7 @@ function App() {
   const [searchText, setSearchText] = useState('');
   // Notes
   const [newNote, setNewNotes] = useState(false);
-  const [notes, setNotes] = useState([]);
+  
 
   // Todos
   const [newTodo, setNewTodos] = useState(false);
