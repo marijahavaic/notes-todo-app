@@ -132,7 +132,7 @@ function App() {
   return (
     <div className={`${darkMode ? 'DarkMode' : 'App'}`}>
       <Header
-        handleAddNote={addNoteComponent}
+        handleAddNote={addNoteComponent} 
         handleAddTodo={addTodoComponent}
         handleSearchNote={setSearchText}
         handleToggleDarkMode={setDarkMode}
@@ -152,7 +152,7 @@ function App() {
         }
         <TodoList
           todos={todos.filter((todo) => todo.title.toLowerCase().includes(searchText) || todo.tasks.filter((task) => task.text.toLowerCase().includes(searchText)))}
-          handleAddTodo={addTodo}
+          handleAddTodo={addTodo} 
           newTodo={newTodo}
           handleDeleteTodo={deleteTodo}
           handleDeleteTask={deleteTask}
