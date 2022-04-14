@@ -8,6 +8,9 @@ import AddNote from './Components/AddNote';
 import Header from './Components/Header';
 import TodoList from './Components/TodoList';
 
+
+import {NotesProvider, NotesListContext} from './Components/NotesListContext'; 
+
 function App() {
   // Dark Mode
   const [darkMode, setDarkMode] = useState(false);
@@ -15,7 +18,7 @@ function App() {
   const [searchText, setSearchText] = useState('');
   // Notes
   const [newNote, setNewNotes] = useState(false);
-  
+  const [notes, setNotes] = useContext(NotesListContext)
 
   // Todos
   const [newTodo, setNewTodos] = useState(false);
@@ -130,6 +133,7 @@ function App() {
   }
 
   return (
+    <NotesProvider>
     <div className={`${darkMode ? 'DarkMode' : 'App'}`}>
       <Header
         handleAddNote={addNoteComponent} 
@@ -163,6 +167,7 @@ function App() {
           handleEditTodos={editTodo}
         />
       </div>
+      
       <div className='Notes'>
         {newNote && <AddNote
           handleAddNote={addNote}
@@ -178,7 +183,9 @@ function App() {
           newNote={newNote}
         />
       </div>
+      
     </div>
+    </NotesProvider>
   );
 };
 
