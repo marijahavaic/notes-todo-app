@@ -10,7 +10,7 @@ import {NotesProvider} from './Components/NotesListContext';
 ReactDOM.render(
   <React.StrictMode>
      <NotesProvider>
-    <App />
+      <App />
     </NotesProvider>
   </React.StrictMode>,
   document.getElementById('root')
