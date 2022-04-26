@@ -8,8 +8,6 @@ import EditTextNote from './EditTextNote';
 
 const Note = ({ id, title, text, handleDeleteNote, handleEditNote }) => {
     const [isEditing, setIsEditing] = useState(false);
-
-
     const [editTitle, setEditTitle] = useState(title);
     const [editText, setEditText] = useState(text);
 
