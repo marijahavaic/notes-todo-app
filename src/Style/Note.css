@@ -5,6 +5,7 @@
     background-color: aliceblue;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
     font-family: 'Poppins', sans-serif;
+    align-self: center;
 }
 
 .DarkMode .Note {

@@ -4,6 +4,7 @@ import { nanoid } from 'nanoid';
 import './App.css';
 import NotesList from './Components/NotesList';
 import AddTodo from './Components/AddTodo';
+
 import AddNote from './Components/AddNote';
 import Header from './Components/Header';
 import TodoList from './Components/TodoList';

@@ -1,6 +1,6 @@
 .NotesList 
 {
-    display: flex;
+    display: grid;
     margin: 16px;
     flex-wrap: wrap;
     justify-content: flex-start;

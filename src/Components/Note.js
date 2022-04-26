@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPenToSquare, faTrashCan, faClose } from '@fortawesome/free-solid-svg-icons';
 import EditTextNote from './EditTextNote';
 
-const Note = ({ id, title, text, handleDeleteNote, handleEditNote, handleCloseEdit }) => {
+const Note = ({ id, title, text, handleDeleteNote, handleEditNote }) => {
     const [isEditing, setIsEditing] = useState(false);
 
 
