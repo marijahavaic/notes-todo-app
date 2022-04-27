@@ -7,7 +7,7 @@ import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
 
 import '../App.css';
 
-const Header = ({ handleAddNote, handleAddTodo, handleSearchNote, handleToggleDarkMode, isDark }) => {
+const Header = ({ handleAddNote, handleAddTodo, handleSearchNote, handleToggleDarkMode, isDark, isMobile }) => {
     return (
         <div className='Header'>
             <div className='HeaderTitle'>
@@ -15,7 +15,7 @@ const Header = ({ handleAddNote, handleAddTodo, handleSearchNote, handleToggleDa
                 <button className="DarkMoodToggler"
                     onClick={() =>
                         handleToggleDarkMode((prevDarkMode) => !prevDarkMode)}>
-                    {isDark ? <div className="LightButton">Light Mode  <FontAwesomeIcon icon={faSun} className="Icon" style={{ marginLeft: '3px' }} /></div> : <div className="DarkButton">Dark Mode <FontAwesomeIcon icon={faMoon} className="Icon" style={{ marginLeft: '3px' }} /></div>}
+                    {isDark ? <div className="LightButton">{isMobile ? <FontAwesomeIcon icon={faSun} className="Icon" /> : 'Light Mode'}</div> : <div className="DarkButton">{isMobile ? <FontAwesomeIcon icon={faMoon} className="Icon" style={{ marginLeft: '3px' }} /> : 'Dark Mode'}</div>}
                 </button>
             </div>
             <div className='HeaderBody'>

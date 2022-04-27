@@ -27,6 +27,26 @@ function App() {
   // Tasks
   const [newTasks, setNewTasks] = useState([]);
   const [tasks, setTasks] = useState([]);
+
+  // Mobile
+
+  const [isMobile, setIsMobile] = useState(false)
+ 
+  //choose the screen size 
+  const handleResize = () => {
+    if (window.innerWidth < 720) {
+        setIsMobile(true)
+    } else {
+        setIsMobile(false)
+    }
+  }
+
+  // create an event listener
+  useEffect(() => {
+    window.addEventListener("resize", handleResize)
+  })
+
+
   // Retrive notes from local storage
   useEffect(() => {
     const savedNotes = JSON.parse(
@@ -142,6 +162,7 @@ function App() {
         handleSearchNote={setSearchText}
         handleToggleDarkMode={setDarkMode}
         isDark={darkMode}
+        isMobile={isMobile}
       />
       <div className='Todos'>
         {newTodo && <AddTodo
