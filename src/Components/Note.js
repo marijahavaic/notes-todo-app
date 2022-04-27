@@ -60,7 +60,6 @@ const Note = ({ id, title, text, handleDeleteNote, handleEditNote }) => {
                     handleTextEdit={handleTextEdit}
                 />
                 <div className='NoteFooter'>
-                    <small>300 Remaining</small>
                     <button className='save' onClick={handleSaveEditClick}>Save</button>
                 </div>
             </div>
