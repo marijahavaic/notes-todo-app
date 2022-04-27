@@ -79,6 +79,8 @@
 }
 
 .Todo .TodoBody {
+    overflow: auto;
+    max-height: 300px;
     margin: 16px 16px;
     text-align: justify;
     word-wrap: break-word;
@@ -130,6 +132,8 @@ button .Close {
     z-index: 2;
     position: relative;
     margin: 150px auto;
+    width: 330px;
+    height: 450px;
     /* transition: all 5s ease-in-out; */
 }
 
