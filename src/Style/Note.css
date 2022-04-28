@@ -137,6 +137,7 @@ textarea:placeholder-shown {
     z-index: 1;
 }
 
+
 .NewNote {
     z-index: 2;
     position: relative;
