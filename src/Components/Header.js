@@ -31,11 +31,11 @@ const Header = ({ handleAddNote, handleAddTodo, handleSearchNote, handleToggleDa
                     {isDark ? lightButton() : darkButton()}
                 </button>
             </div>
-            <div className='HeaderBody'>
+            <div className={isMobile ? 'HeaderBodyMobile' : 'HeaderBody'}>
                 <Search handleSearchNote={handleSearchNote} />
                 <div className='Buttons'>
-                    <button onClick={handleAddNote}>+ Add Note</button>
-                    <button onClick={handleAddTodo}>+ Add Todo</button>
+                    <button onClick={handleAddNote} className="ButtonNote">Add Note</button>
+                    <button onClick={handleAddTodo} className="ButtonTodo" >Add Todo</button>
                 </div>
             </div>
         </div>

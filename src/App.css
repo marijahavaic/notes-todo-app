@@ -21,8 +21,9 @@
 
 .Buttons {
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
   align-items: flex-start;
+  margin: auto;
 }
 
 button {
@@ -35,6 +36,11 @@ button {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   font-family: Poppins, sans-serif;
   font-weight: 600;
+  min-width: 85px;
+}
+
+.ButtonNote {
+  margin-right: 0;
 }
 
 .DarkMode button {
@@ -88,14 +94,22 @@ button:hover {
   justify-content: space-between;
 }
 
+.HeaderBodyMobile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 .Header .Search {
   margin: auto;
   display: flex;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.3);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   border-radius: 10px;
   padding: 10px;
-  width: 65%;
+  width: 75%;
   min-width: 50%;
   align-self: center;
 }
@@ -180,11 +194,15 @@ button:hover {
 }
 
 .DarkMoodToggler{
+  min-width: 40px;
   width: 40px;
   height: 40px;
   border-radius: 50%;
   background-color: rgba(0, 0, 0, 0.5);
   font-size: 20px;
+  position: absolute;
+  top: -8px;
+  right: -8px;
   display: flex;
   align-items: center;
   justify-content: center;
