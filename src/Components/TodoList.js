@@ -4,9 +4,11 @@ import Todo from './Todo';
 
 import '../Style/TodoList.css';
 
+import Grid from '@mui/material/Grid';
+
 const TodoList = ({ todos, handleDeleteTodo, handleDeleteTask, handleEditTodos, newTasks, setNewTasks, handleCheckTask, setTasks }) => {
     return (
-        <div className="TodoList">
+        <Grid container spacing={1} columns={{ xs: 1, sm: 2, md: 3, l: 5, xl: 6 }}  justifyContent="space-evenly">
             {todos.map((todo) => (
                 <Todo
                     key={todo.id}
@@ -22,7 +24,7 @@ const TodoList = ({ todos, handleDeleteTodo, handleDeleteTask, handleEditTodos, 
                     handleCheckTask={handleCheckTask}
                 />
             ))}
-        </div>
+        </Grid>
     )
 }
 

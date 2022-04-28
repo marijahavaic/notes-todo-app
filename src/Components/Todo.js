@@ -7,6 +7,8 @@ import { nanoid } from 'nanoid';
 import Task from './Task';
 import EditTodo from './EditTodo';
 
+import Grid from '@mui/material/Grid';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPenToSquare, faTrashCan, faClose } from '@fortawesome/free-solid-svg-icons';
 
@@ -132,9 +134,9 @@ const Todo = ({ id, title, tasks, handleDeleteTodo, handleDeleteTask, handleEdit
         </div>
     )
     return (
-        <div>
+        <Grid>
             {isEditing ? editTodo : viewTodo}
-        </div>
+        </Grid>
     )
 }
 
