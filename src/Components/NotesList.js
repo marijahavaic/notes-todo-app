@@ -2,6 +2,8 @@ import React, {useContext} from 'react';
 
 import Note from './Note';
 
+import Grid from '@mui/material/Grid';
+
 import '../Style/NotesList.css';
 
 import { NotesListContext } from './NotesListContext';
@@ -9,7 +11,7 @@ import { NotesListContext } from './NotesListContext';
 const NotesList = ({ handleDeleteNote, handleEditNote, handleCloseEdit }) => {
     const [notes] = useContext(NotesListContext)
     return (
-        <div className="NotesList">
+        <Grid container spacing={1} columns={{ xs: 1, sm: 2, md: 3, l: 5, xl: 6 }}  justifyContent="space-evenly">
             {notes.map((note) => (
                 <Note
                     key={note.id}
@@ -21,7 +23,7 @@ const NotesList = ({ handleDeleteNote, handleEditNote, handleCloseEdit }) => {
                     handleCloseEdit={handleCloseEdit}
                 />
             ))}
-        </div>
+        </Grid>
     )
 }
 

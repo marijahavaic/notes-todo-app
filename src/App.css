@@ -59,7 +59,6 @@ button:hover {
   background-color: rgba(107, 170, 244, 0.5);
 }
 
-.Notes,
 .Todos {
   display: flex;
 }

@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 
-import '../Style/Note.css'
+import '../Style/Note.css';
+
+import Grid from '@mui/material/Grid';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPenToSquare, faTrashCan, faClose } from '@fortawesome/free-solid-svg-icons';
@@ -92,7 +94,9 @@ const Note = ({ id, title, text, handleDeleteNote, handleEditNote }) => {
 
     return (
         <div>
-            {isEditing ? editNote : viewNote}
+            <Grid>
+                {isEditing ? editNote : viewNote}
+            </Grid>
         </div>
     )
 }
