@@ -11,7 +11,7 @@ import { NotesListContext } from './NotesListContext';
 const NotesList = ({ handleDeleteNote, handleEditNote, handleCloseEdit }) => {
     const [notes] = useContext(NotesListContext)
     return (
-        <Grid container spacing={1} columns={{ xs: 1, sm: 2, md: 3, l: 5, xl: 6 }}  justifyContent={{ xs:"center", sm:"center", md:"flex-start"}} >
+        <Grid container columns={{ xs: 1, sm: 2, md: 3, l: 5, xl: 6 }}  justifyContent={{ xs:"center", sm:"center", md:"flex-start"}} >
             {notes.map((note) => (
                 <Note
                     key={note.id}
