@@ -57,7 +57,9 @@ const Todo = ({ id, title, tasks, handleDeleteTodo, handleDeleteTask, handleEdit
 
     // save note with calling addNote function from App.js
     const handleSaveClick = () => {
-        // check if the note isn't empty
+        // Check if input area isn't empty
+
+        // check if the todo isn't empty
         if (newTasks.length > 0 || editTitle.trim().length > 0) {
             handleEditTodos(id, editTitle, newTasks);
             setEditTitle(editTitle);
