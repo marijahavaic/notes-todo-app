@@ -1,9 +1,9 @@
-import '../Style/Note.css';
+import "../Style/Note.css";
 
 const EditTextNote = ({ text, editText, handleTextEdit }) => {
     return (
         <div>
-            <div className='NoteBody'>
+            <div className="NoteBody">
                 <textarea
                     rows={11}
                     cols={31}
@@ -13,11 +13,8 @@ const EditTextNote = ({ text, editText, handleTextEdit }) => {
                     onChange={handleTextEdit}
                 ></textarea>
             </div>
-        </div >
-    )
-}
+        </div>
+    );
+};
 
 export default EditTextNote;
-
-
-

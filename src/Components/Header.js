@@ -1,45 +1,54 @@
 import React from "react";
 
-import Search from './Search';
+import Search from "./Search";
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
 
-import '../App.css';
+import "../App.css";
 
-const Header = ({ handleAddNote, handleAddTodo, handleSearchNote, handleToggleDarkMode, isDark, isMobile }) => {
-
+const Header = ({
+    handleAddNote,
+    handleAddTodo,
+    handleSearchNote,
+    handleToggleDarkMode,
+    isDark,
+    isMobile,
+}) => {
     const lightButton = () => {
-        return (
-                <FontAwesomeIcon icon={faSun} className="DarkModeIcon" />
-        )
-    }
+        return <FontAwesomeIcon icon={faSun} className="DarkModeIcon" />;
+    };
 
     const darkButton = () => {
-        return (
-            <FontAwesomeIcon icon={faMoon} className="DarkModeIcon" />
-        )
-    }
+        return <FontAwesomeIcon icon={faMoon} className="DarkModeIcon" />;
+    };
 
     return (
-        <div className='Header'>
-            <div className='HeaderTitle'>
+        <div className="Header">
+            <div className="HeaderTitle">
                 <h1>Notes and Todo</h1>
-                <button className="DarkMoodToggler"
+                <button
+                    className="DarkMoodToggler"
                     onClick={() =>
-                        handleToggleDarkMode((prevDarkMode) => !prevDarkMode)}>
+                        handleToggleDarkMode((prevDarkMode) => !prevDarkMode)
+                    }
+                >
                     {isDark ? lightButton() : darkButton()}
                 </button>
             </div>
-            <div className={isMobile ? 'HeaderBodyMobile' : 'HeaderBody'}>
+            <div className={isMobile ? "HeaderBodyMobile" : "HeaderBody"}>
                 <Search handleSearchNote={handleSearchNote} />
-                <div className='Buttons'>
-                    <button onClick={handleAddNote} className="ButtonNote">Add Note</button>
-                    <button onClick={handleAddTodo} className="ButtonTodo" >Add Todo</button>
+                <div className="Buttons">
+                    <button onClick={handleAddNote} className="ButtonNote">
+                        Add Note
+                    </button>
+                    <button onClick={handleAddTodo} className="ButtonTodo">
+                        Add Todo
+                    </button>
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default Header;

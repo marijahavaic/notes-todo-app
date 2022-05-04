@@ -1,15 +1,20 @@
-import React from 'react';
+import React from "react";
 
-import TaskList from './TaskList';
+import TaskList from "./TaskList";
 
-function EditTodo({ handleSubmit, handleTextInput, taskText, newTasks, handleDeleteTask, completeTask }) {
+function EditTodo({
+    handleSubmit,
+    handleTextInput,
+    taskText,
+    newTasks,
+    handleDeleteTask,
+    completeTask,
+}) {
     return (
-        <div className='EditTodo'>
-            <div className='TodoBody'>
-                <div className='TodoEntry'>
-                    <form
-                        onSubmit={handleSubmit}
-                    >
+        <div className="EditTodo">
+            <div className="TodoBody">
+                <div className="TodoEntry">
+                    <form onSubmit={handleSubmit}>
                         <input
                             type="text"
                             value={taskText}

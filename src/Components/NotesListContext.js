@@ -1,4 +1,4 @@
-import React, { useState, createContext} from 'react';
+import React, { useState, createContext } from "react";
 
 export const NotesListContext = createContext();
 
@@ -10,4 +10,4 @@ export const NotesProvider = (props) => {
             {props.children}
         </NotesListContext.Provider>
     );
-}
+};
