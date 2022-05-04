@@ -1,53 +1,65 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
-import '../Style/Todo.css';
+import "../Style/Todo.css";
 
-import { nanoid } from 'nanoid';
+import { nanoid } from "nanoid";
 
-import Task from './Task';
-import EditTodo from './EditTodo';
+import Task from "./Task";
+import EditTodo from "./EditTodo";
 
-import Grid from '@mui/material/Grid';
+import Grid from "@mui/material/Grid";
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPenToSquare, faTrashCan, faClose } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+    faPenToSquare,
+    faTrashCan,
+    faClose,
+} from "@fortawesome/free-solid-svg-icons";
 
-const Todo = ({ id, title, tasks, handleDeleteTodo, handleDeleteTask, handleEditTodos, newTasks, setNewTasks, setTasks }) => {
+const Todo = ({
+    id,
+    title,
+    tasks,
+    handleDeleteTodo,
+    handleDeleteTask,
+    handleEditTodos,
+    newTasks,
+    setNewTasks,
+    setTasks,
+}) => {
     const [isEditing, setIsEditing] = useState(false);
     const [editTitle, setEditTitle] = useState(title);
-    const [taskText, setTaskText] = useState('');
-
+    const [taskText, setTaskText] = useState("");
 
     const handleSubmit = (e) => {
         e.preventDefault();
         const newTask = {
             id: nanoid(),
             text: taskText,
-            completed: false
-        }
+            completed: false,
+        };
         setNewTasks([newTask, ...newTasks]);
-        setTaskText('');
-    }
-
+        setTaskText("");
+    };
 
     // set note title
     const handleTitleEdit = (e) => {
-        setEditTitle(e.target.value)
-    }
+        setEditTitle(e.target.value);
+    };
 
     // set task
     const handleTextInput = (e) => {
         setTaskText(e.target.value);
-    }
+    };
 
     const handleEditClick = () => {
         setIsEditing(true);
         setNewTasks(tasks);
-    }
+    };
 
     const closeEditTodo = () => {
         setIsEditing(false);
-    }
+    };
 
     const completeTask = (index) => {
         const newTasks = [...tasks];
@@ -66,12 +78,12 @@ const Todo = ({ id, title, tasks, handleDeleteTodo, handleDeleteTask, handleEdit
             setNewTasks(newTasks);
             setIsEditing(false);
         }
-    }
+    };
 
     const editTodo = (
-        <div className='NewTodoBg'>
+        <div className="NewTodoBg">
             <div className="Todo NewTodo">
-                <div className='TodoHeader'>
+                <div className="TodoHeader">
                     <textarea
                         rows={1}
                         cols={28}
@@ -94,10 +106,10 @@ const Todo = ({ id, title, tasks, handleDeleteTodo, handleDeleteTask, handleEdit
                     handleDeleteTask={handleDeleteTask}
                     completeTask={completeTask}
                 />
-                <div className='TodoFooter'>
-                    <button className='saveTodo'
-                        onClick={handleSaveClick}
-                    >Save</button>
+                <div className="TodoFooter">
+                    <button className="saveTodo" onClick={handleSaveClick}>
+                        Save
+                    </button>
                 </div>
             </div>
         </div>
@@ -105,9 +117,9 @@ const Todo = ({ id, title, tasks, handleDeleteTodo, handleDeleteTask, handleEdit
 
     const viewTodo = (
         <div className="Todo" key={id}>
-            <div className='TodoHeader'>
+            <div className="TodoHeader">
                 <h3>{title}</h3>
-                <div className='Icons'>
+                <div className="Icons">
                     <FontAwesomeIcon
                         onClick={() => handleEditClick()}
                         icon={faPenToSquare}
@@ -120,7 +132,7 @@ const Todo = ({ id, title, tasks, handleDeleteTodo, handleDeleteTask, handleEdit
                     />
                 </div>
             </div>
-            <div className='TodoBody'>
+            <div className="TodoBody">
                 {tasks.map((task, index) => (
                     <Task
                         key={task.id}
@@ -134,12 +146,8 @@ const Todo = ({ id, title, tasks, handleDeleteTodo, handleDeleteTask, handleEdit
                 ))}
             </div>
         </div>
-    )
-    return (
-        <Grid>
-            {isEditing ? editTodo : viewTodo}
-        </Grid>
-    )
-}
+    );
+    return <>{isEditing ? editTodo : viewTodo}</>;
+};
 
 export default Todo;

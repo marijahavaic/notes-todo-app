@@ -1,9 +1,14 @@
-import React from 'react';
+import React from "react";
 
-import '../Style/TodoList.css';
-import Task from './Task';
+import Task from "./Task";
 
-const TaskList = ({ newTasks, completeTask, handleCompleted, handleDeleteTask, isEditing }) => {
+const TaskList = ({
+    newTasks,
+    completeTask,
+    handleCompleted,
+    handleDeleteTask,
+    isEditing,
+}) => {
     return (
         <div className="TaskList">
             {newTasks.map((task, index) => (
@@ -17,10 +22,9 @@ const TaskList = ({ newTasks, completeTask, handleCompleted, handleDeleteTask, i
                     isEditing={isEditing}
                     completeTask={completeTask}
                 />
-            ))
-            }
+            ))}
         </div>
-    )
-}
+    );
+};
 
 export default TaskList;

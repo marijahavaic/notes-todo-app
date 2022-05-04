@@ -1,14 +1,21 @@
-import React from 'react';
+import React from "react";
 
-import Todo from './Todo';
+import Todo from "./Todo";
 
-import '../Style/TodoList.css';
+import "../Style/NotesList.css";
 
-import Grid from '@mui/material/Grid';
-
-const TodoList = ({ todos, handleDeleteTodo, handleDeleteTask, handleEditTodos, newTasks, setNewTasks, handleCheckTask, setTasks }) => {
+const TodoList = ({
+    todos,
+    handleDeleteTodo,
+    handleDeleteTask,
+    handleEditTodos,
+    newTasks,
+    setNewTasks,
+    handleCheckTask,
+    setTasks,
+}) => {
     return (
-        <Grid container spacing={1} columns={{ xs: 1, sm: 2, md: 3, l: 5, xl: 6 }}  justifyContent={{ xs:"center", sm:"center", md:"flex-start"}}>
+        <div className="Grid-container">
             {todos.map((todo) => (
                 <Todo
                     key={todo.id}
@@ -24,8 +31,8 @@ const TodoList = ({ todos, handleDeleteTodo, handleDeleteTask, handleEditTodos, 
                     handleCheckTask={handleCheckTask}
                 />
             ))}
-        </Grid>
-    )
-}
+        </div>
+    );
+};
 
 export default TodoList;

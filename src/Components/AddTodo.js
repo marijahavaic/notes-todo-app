@@ -1,25 +1,33 @@
-import { useState } from 'react';
-import { nanoid } from 'nanoid';
+import { useState } from "react";
+import { nanoid } from "nanoid";
 
-import '../Style/Todo.css';
+import "../Style/Todo.css";
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faClose } from '@fortawesome/free-solid-svg-icons';
-import TaskList from './TaskList';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faClose } from "@fortawesome/free-solid-svg-icons";
+import TaskList from "./TaskList";
 
-const AddTodo = ({ handleAddTodo, handleCloseNewTodo, newTasks, setNewTasks, handleDeleteTask, tasks, setTasks }) => {
-    const [todoTitle, setTodoTitle] = useState('');
-    const [taskText, setTaskText] = useState('');
+const AddTodo = ({
+    handleAddTodo,
+    handleCloseNewTodo,
+    newTasks,
+    setNewTasks,
+    handleDeleteTask,
+    tasks,
+    setTasks,
+}) => {
+    const [todoTitle, setTodoTitle] = useState("");
+    const [taskText, setTaskText] = useState("");
 
     // set todo title
     const handleTitleChange = (e) => {
         setTodoTitle(e.target.value);
-    }
+    };
 
     // set todo item
     const handleTextInput = (e) => {
         setTaskText(e.target.value);
-    }
+    };
     // Repetative code that wasn't passed on AddTodo - resolve with useContext!
     const completeTask = (index) => {
         const newTasksArr = [...newTasks];
@@ -33,11 +41,11 @@ const AddTodo = ({ handleAddTodo, handleCloseNewTodo, newTasks, setNewTasks, han
         const newTask = {
             id: nanoid(),
             text: taskText,
-            completed: false
-        }
+            completed: false,
+        };
         setNewTasks([newTask, ...newTasks]);
-        setTaskText('');
-    }
+        setTaskText("");
+    };
 
     // save note with calling addNote function from App.js
     const handleSaveClick = () => {
@@ -45,15 +53,15 @@ const AddTodo = ({ handleAddTodo, handleCloseNewTodo, newTasks, setNewTasks, han
         if (newTasks.length > 0 || todoTitle.trim().length > 0) {
             handleAddTodo(todoTitle, newTasks);
             // Clear input areas
-            setTodoTitle('');
+            setTodoTitle("");
             setNewTasks([]);
         }
-    }
+    };
 
     return (
-        <div className='NewTodoBg'>
+        <div className="NewTodoBg">
             <div className="Todo NewTodo">
-                <div className='TodoHeader'>
+                <div className="TodoHeader">
                     <textarea
                         rows={1}
                         cols={28}
@@ -61,11 +69,15 @@ const AddTodo = ({ handleAddTodo, handleCloseNewTodo, newTasks, setNewTasks, han
                         value={todoTitle}
                         onChange={handleTitleChange}
                     ></textarea>
-                    <FontAwesomeIcon icon={faClose} className="Icon" onClick={handleCloseNewTodo} />
+                    <FontAwesomeIcon
+                        icon={faClose}
+                        className="Icon"
+                        onClick={handleCloseNewTodo}
+                    />
                 </div>
-                <div className='TodoBody'>
-                    <div className='TodoEntry'>
-                        <form onSubmit={handleSubmit} >
+                <div className="TodoBody">
+                    <div className="TodoEntry">
+                        <form onSubmit={handleSubmit}>
                             <input
                                 type="text"
                                 value={taskText}
@@ -79,16 +91,15 @@ const AddTodo = ({ handleAddTodo, handleCloseNewTodo, newTasks, setNewTasks, han
                         handleDeleteTask={handleDeleteTask}
                         completeTask={completeTask}
                     />
-
                 </div>
-                <div className='TodoFooter'>
-                    <button className='saveTodo'
-                        onClick={handleSaveClick}
-                    >Save</button>
+                <div className="TodoFooter">
+                    <button className="saveTodo" onClick={handleSaveClick}>
+                        Save
+                    </button>
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default AddTodo;

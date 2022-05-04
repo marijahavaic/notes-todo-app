@@ -1,187 +1,187 @@
 .App {
-  text-align: center;
-  min-height: 100vh;
-  height: auto;
-  background: rgb(250, 184, 213);
-  background: linear-gradient(7deg, rgba(250, 184, 213, 1) 0%, rgba(107, 170, 244, 1) 100%);
-  display: flex;
-  flex-direction: column;
-  padding: 0 15px;
+    text-align: center;
+    min-height: 100vh;
+    height: auto;
+    background: rgb(250, 184, 213);
+    background: linear-gradient(
+        7deg,
+        rgba(250, 184, 213, 1) 0%,
+        rgba(107, 170, 244, 1) 100%
+    );
+    display: flex;
+    flex-direction: column;
+    padding: 0 15px;
 }
 
 .DarkMode {
-  text-align: center;
-  min-height: 100vh;
-  height: auto;
-  background-color: rgba(0, 0, 0, 0.9);
-  display: flex;
-  flex-direction: column;
-  padding: 0 15px;
+    text-align: center;
+    min-height: 100vh;
+    height: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    flex-direction: column;
+    padding: 0 15px;
 }
 
 .Buttons {
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-start;
-  margin: auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    margin: auto;
 }
 
 button {
-  cursor: pointer;
-  border: none;
-  margin: 15px;
-  padding: 10px;
-  border-radius: 5px;
-  background-color: rgba(250, 184, 213, 1);
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  font-family: Poppins, sans-serif;
-  font-weight: 600;
-  min-width: 85px;
+    cursor: pointer;
+    border: none;
+    margin: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgba(250, 184, 213, 1);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    font-family: Poppins, sans-serif;
+    font-weight: 600;
+    min-width: 85px;
 }
 
 .ButtonNote {
-  margin-right: 0;
+    margin-right: 0;
 }
 
 .DarkMode button {
-  background-color: rgb(180, 134, 154);
+    background-color: rgb(180, 134, 154);
 }
 
 button:active {
-  transform: scale(0.95);
+    transform: scale(0.95);
 }
 
 button:hover {
-  color: aliceblue;
+    color: aliceblue;
 }
 
 .DarkMode .ButtonNote {
-  background-color: rgba(107, 170, 244, 0.5);
-}
-
-.Todos {
-  display: flex;
+    background-color: rgba(107, 170, 244, 0.5);
 }
 
 .Header {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
 .HeaderTitle {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 0;
 }
 
 .App .HeaderTitle h1 {
-  margin: auto auto auto 31px;
-  color: aliceblue;
-  font-size: 50px;
+    margin: auto auto auto 31px;
+    color: aliceblue;
+    font-size: 50px;
 }
 
 .DarkMode .HeaderTitle h1 {
-  margin: auto auto auto 31px;
-  color: rgb(205, 215, 224);
-  font-size: 50px;
+    margin: auto auto auto 31px;
+    color: rgb(205, 215, 224);
+    font-size: 50px;
 }
 
 .HeaderBody {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .HeaderBodyMobile {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .Header .Search {
-  margin: auto;
-  display: flex;
-  align-items: center;
-  background-color: rgba(0, 0, 0, 0.3);
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  border-radius: 10px;
-  padding: 10px;
-  width: 85%;
-  min-width: 50%;
-  align-self: center;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.3);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 10px;
+    padding: 10px;
+    width: 85%;
+    min-width: 50%;
+    align-self: center;
 }
 
 .DarkMode .Header .Search {
-  background-color: rgb(34, 34, 34);
+    background-color: rgb(34, 34, 34);
 }
 
 .Header .Search input {
-  border: none;
-  background-color: transparent;
-  color: aliceblue;
-  font-size: 18px;
-  width: 100%;
+    border: none;
+    background-color: transparent;
+    color: aliceblue;
+    font-size: 18px;
+    width: 100%;
 }
 
 .DarkMode .Header .Search input {
-  background-color: transparent;
-  color: rgb(205, 215, 224);
+    background-color: transparent;
+    color: rgb(205, 215, 224);
 }
 
 .Header .Search input::placeholder {
-  color: aliceblue;
-  font-size: 18px;
+    color: aliceblue;
+    font-size: 18px;
 }
 
 .DarkMode .Search input::placeholder {
-  color: rgb(205, 215, 224);
+    color: rgb(205, 215, 224);
 }
 
 .Header .Search input:focus {
-  outline: none;
+    outline: none;
 }
 
 .LightButton {
-  color: rgb(205, 215, 224);
+    color: rgb(205, 215, 224);
 }
 
 .LightButton .Icon:hover {
-  color: inherit;
+    color: inherit;
 }
 
 .DarkButton {
-  color: #000;
+    color: #000;
 }
 
 .DarkButton .Icon {
-  color: #000;
+    color: #000;
 }
 
 .DarkButton:hover {
-  color: rgba(0, 0, 0, 0.5);
+    color: rgba(0, 0, 0, 0.5);
 }
 
-.DarkMoodToggler{
-  min-width: 40px;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: rgba(0, 0, 0, 0.5);
-  font-size: 20px;
-  position: absolute;
-  top: -8px;
-  right: -8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.DarkMoodToggler {
+    min-width: 40px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    font-size: 20px;
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .DarkModeIcon {
-  color: aliceblue;
+    color: aliceblue;
 }
 
 .ButtonNote {
-  background-color: rgba(107, 170, 244, 1);
+    background-color: rgba(107, 170, 244, 1);
 }
