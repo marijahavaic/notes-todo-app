@@ -62,7 +62,7 @@ function App() {
         if (savedTodos) {
             setTodos(savedTodos);
         }
-    }, []);
+    }, [setNotes]);
 
     // Storing notes data in local storage
     useEffect(() => {
