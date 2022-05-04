@@ -6,3 +6,35 @@
     justify-content: flex-start;
     align-items: center;
 } */
+
+.Grid-container {
+    display: grid;
+    margin: 15px auto;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 10px;
+    row-gap: 20px;
+}
+
+@media screen and (max-width: 730px) {
+    .Grid-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media (min-width: 731px) and (max-width: 1000px) {
+    .Grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1001px) and (max-width: 1300px) {
+    .Grid-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 2000px) {
+    .Grid-container {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}

@@ -1,12 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
-import '../Style/Note.css';
+import "../Style/Note.css";
 
-import Grid from '@mui/material/Grid';
+import Grid from "@mui/material/Grid";
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPenToSquare, faTrashCan, faClose } from '@fortawesome/free-solid-svg-icons';
-import EditTextNote from './EditTextNote';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+    faPenToSquare,
+    faTrashCan,
+    faClose,
+} from "@fortawesome/free-solid-svg-icons";
+import EditTextNote from "./EditTextNote";
 
 const Note = ({ id, title, text, handleDeleteNote, handleEditNote }) => {
     const [isEditing, setIsEditing] = useState(false);
@@ -15,13 +19,13 @@ const Note = ({ id, title, text, handleDeleteNote, handleEditNote }) => {
 
     // set note title
     const handleTitleEdit = (e) => {
-        setEditTitle(e.target.value)
-    }
+        setEditTitle(e.target.value);
+    };
 
     // set note text
     const handleTextEdit = (e) => {
         setEditText(e.target.value);
-    }
+    };
 
     // save note with calling addNote function from App.js
     const handleSaveEditClick = () => {
@@ -32,20 +36,20 @@ const Note = ({ id, title, text, handleDeleteNote, handleEditNote }) => {
             setEditText(editText);
             setIsEditing(false);
         }
-    }
+    };
 
     const toggleForm = () => {
         setIsEditing(true);
-    }
+    };
 
     const closeEditNote = () => {
         setIsEditing(false);
-    }
+    };
 
     const editNote = (
-        <div className='NewNoteBg'>
+        <div className="NewNoteBg">
             <div className="Note NewNote">
-                <div className='NoteHeader'>
+                <div className="NoteHeader">
                     <textarea
                         rows={1}
                         cols={28}
@@ -54,15 +58,21 @@ const Note = ({ id, title, text, handleDeleteNote, handleEditNote }) => {
                         name={title}
                         onChange={handleTitleEdit}
                     ></textarea>
-                    <FontAwesomeIcon icon={faClose} className="Icon" onClick={closeEditNote} />
+                    <FontAwesomeIcon
+                        icon={faClose}
+                        className="Icon"
+                        onClick={closeEditNote}
+                    />
                 </div>
                 <EditTextNote
                     text={text}
                     editText={editText}
                     handleTextEdit={handleTextEdit}
                 />
-                <div className='NoteFooter'>
-                    <button className='save' onClick={handleSaveEditClick}>Save</button>
+                <div className="NoteFooter">
+                    <button className="save" onClick={handleSaveEditClick}>
+                        Save
+                    </button>
                 </div>
             </div>
         </div>
@@ -70,9 +80,9 @@ const Note = ({ id, title, text, handleDeleteNote, handleEditNote }) => {
 
     const viewNote = (
         <div className="Note" key={id}>
-            <div className='NoteHeader'>
+            <div className="NoteHeader">
                 <h3>{title}</h3>
-                <div className='Icons'>
+                <div className="Icons">
                     <FontAwesomeIcon
                         onClick={() => toggleForm()}
                         icon={faPenToSquare}
@@ -85,20 +95,13 @@ const Note = ({ id, title, text, handleDeleteNote, handleEditNote }) => {
                     />
                 </div>
             </div>
-            <div className='NoteBody'>
+            <div className="NoteBody">
                 <p>{text}</p>
             </div>
         </div>
     );
 
-
-    return (
-        <div>
-            <Grid>
-                {isEditing ? editNote : viewNote}
-            </Grid>
-        </div>
-    )
-}
+    return <>{isEditing ? editNote : viewNote}</>;
+};
 
 export default Note;

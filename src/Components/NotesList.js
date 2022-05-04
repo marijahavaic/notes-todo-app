@@ -1,17 +1,17 @@
-import React, {useContext} from 'react';
+import React, { useContext } from "react";
 
-import Note from './Note';
+import Note from "./Note";
 
-import Grid from '@mui/material/Grid';
+// import Grid from "@mui/material/Grid";
 
-import '../Style/NotesList.css';
+import "../Style/NotesList.css";
 
-import { NotesListContext } from './NotesListContext';
+import { NotesListContext } from "./NotesListContext";
 
 const NotesList = ({ handleDeleteNote, handleEditNote, handleCloseEdit }) => {
-    const [notes] = useContext(NotesListContext)
+    const [notes] = useContext(NotesListContext);
     return (
-        <Grid container columns={{ xs: 1, sm: 2, md: 3, l: 5, xl: 6 }}  justifyContent={{ xs:"center", sm:"center", md:"flex-start"}} >
+        <div className="Grid-container">
             {notes.map((note) => (
                 <Note
                     key={note.id}
@@ -23,8 +23,8 @@ const NotesList = ({ handleDeleteNote, handleEditNote, handleCloseEdit }) => {
                     handleCloseEdit={handleCloseEdit}
                 />
             ))}
-        </Grid>
-    )
-}
+        </div>
+    );
+};
 
 export default NotesList;

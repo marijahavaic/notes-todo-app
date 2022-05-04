@@ -1,10 +1,11 @@
 .Note {
     width: 300px;
     height: 400px;
-    margin: 15px;
+    justify-self: center;
     background-color: aliceblue;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
-    font-family: 'Poppins', sans-serif;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+        rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    font-family: "Poppins", sans-serif;
 }
 
 .DarkMode .Note {
@@ -31,7 +32,7 @@ textarea:focus {
 }
 
 textarea:placeholder-shown {
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     font-size: 16px;
 }
 
@@ -136,7 +137,6 @@ textarea:placeholder-shown {
     height: 100vh;
     z-index: 1;
 }
-
 
 .NewNote {
     z-index: 2;
