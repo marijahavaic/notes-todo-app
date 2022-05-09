@@ -10,7 +10,9 @@ const Search = ({ handleSearchNote }) => {
         <div className="Search">
             <MdSearch className="Icon" />
             <input
-                onChange={(e) => handleSearchNote(e.target.value)}
+                onChange={(e) => {
+                    handleSearchNote(e.target.value);
+                }}
                 type="text"
                 placeholder="Type to search"
             />

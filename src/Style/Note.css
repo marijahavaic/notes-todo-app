@@ -6,7 +6,6 @@
     box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
         rgba(0, 0, 0, 0.22) 0px 10px 10px;
     font-family: "Poppins", sans-serif;
-    overflow-x: hidden;
 }
 
 .DarkMode .Note {
@@ -103,7 +102,7 @@ textarea:placeholder-shown {
     margin: 0 16px;
     max-height: 300px;
     text-align: justify;
-    overflow-y: auto;
+    overflow: hidden;
 }
 
 .Note .NoteBody p {
@@ -143,7 +142,7 @@ textarea:placeholder-shown {
     z-index: 2;
     position: relative;
     margin: 150px auto;
-    /* transition: all 5s ease-in-out; */
+    overflow-x: hidden;
 }
 
 button .Close {
