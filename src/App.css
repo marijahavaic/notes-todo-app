@@ -93,12 +93,12 @@ button:hover {
     justify-content: space-between;
 }
 
-.HeaderBodyMobile {
+/* .HeaderBodyMobile {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-}
+} */
 
 .Header .Search {
     margin: auto;
@@ -184,4 +184,12 @@ button:hover {
 
 .ButtonNote {
     background-color: rgba(107, 170, 244, 1);
+}
+
+@media (max-width: 720px) {
+    .HeaderBody {
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
 }

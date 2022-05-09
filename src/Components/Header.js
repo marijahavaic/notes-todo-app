@@ -13,7 +13,6 @@ const Header = ({
     handleSearchNote,
     handleToggleDarkMode,
     isDark,
-    isMobile,
 }) => {
     const lightButton = () => {
         return <FontAwesomeIcon icon={faSun} className="DarkModeIcon" />;
@@ -36,7 +35,7 @@ const Header = ({
                     {isDark ? lightButton() : darkButton()}
                 </button>
             </div>
-            <div className={isMobile ? "HeaderBodyMobile" : "HeaderBody"}>
+            <div className="HeaderBody">
                 <Search handleSearchNote={handleSearchNote} />
                 <div className="Buttons">
                     <button onClick={handleAddNote} className="ButtonNote">
