@@ -172,14 +172,9 @@ function App() {
                     />
                 )}
                 <TodoList
-                    todos={todos.filter(
-                        (todo) =>
-                            todo.title.toLowerCase().includes(searchText) ||
-                            todo.tasks.filter((task) =>
-                                task.text.toLowerCase().includes(searchText)
-                            )
-                    )}
+                    todos={todos}
                     handleAddTodo={addTodo}
+                    searchText={searchText}
                     newTodo={newTodo}
                     handleDeleteTodo={deleteTodo}
                     handleDeleteTask={deleteTask}
