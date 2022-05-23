@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { nanoid } from "nanoid";
 
+import useTitleState from "../Hooks/useTitleState";
+
 import "../Style/Todo.css";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -16,13 +18,8 @@ const AddTodo = ({
     tasks,
     setTasks,
 }) => {
-    const [todoTitle, setTodoTitle] = useState("");
+    const [value, handleChange, reset] = useTitleState("");
     const [taskText, setTaskText] = useState("");
-
-    // set todo title
-    const handleTitleChange = (e) => {
-        setTodoTitle(e.target.value);
-    };
 
     // set todo item
     const handleTextInput = (e) => {
@@ -50,10 +47,10 @@ const AddTodo = ({
     // save note with calling addNote function from App.js
     const handleSaveClick = () => {
         // check if the note isn't empty
-        if (newTasks.length > 0 || todoTitle.trim().length > 0) {
-            handleAddTodo(todoTitle, newTasks);
+        if (newTasks.length > 0 || value.trim().length > 0) {
+            handleAddTodo(value, newTasks);
             // Clear input areas
-            setTodoTitle("");
+            reset();
             setNewTasks([]);
         }
     };
@@ -66,8 +63,8 @@ const AddTodo = ({
                         rows={1}
                         cols={28}
                         placeholder="New Todo"
-                        value={todoTitle}
-                        onChange={handleTitleChange}
+                        value={value}
+                        onChange={handleChange}
                     ></textarea>
                     <FontAwesomeIcon
                         icon={faClose}

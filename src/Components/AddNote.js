@@ -8,13 +8,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClose } from "@fortawesome/free-solid-svg-icons";
 
 const AddNote = ({ handleAddNote, handleCloseNewNote }) => {
-    const [noteTitle, setNoteTitle] = useState("");
+    const [title, handleChange, reset] = useTitleState("");
     const [noteText, setNoteText] = useState("");
-
-    // set note title
-    const handleTitleChange = (e) => {
-        setNoteTitle(e.target.value);
-    };
 
     // set note text
     const handleTextChange = (e) => {
@@ -24,10 +19,10 @@ const AddNote = ({ handleAddNote, handleCloseNewNote }) => {
     // save note with calling addNote function from App.js
     const handleSaveClick = () => {
         // check if the note isn't empty
-        if (noteText.trim().length > 0 || noteTitle.trim().length > 0) {
-            handleAddNote(noteTitle, noteText);
+        if (noteText.trim().length > 0 || title.trim().length > 0) {
+            handleAddNote(title, noteText);
             // Clear input areas
-            setNoteTitle("");
+            reset();
             setNoteText("");
         }
     };
@@ -40,8 +35,8 @@ const AddNote = ({ handleAddNote, handleCloseNewNote }) => {
                         rows={1}
                         cols={28}
                         placeholder="New Note"
-                        value={noteTitle}
-                        onChange={handleTitleChange}
+                        value={title}
+                        onChange={handleChange}
                     ></textarea>
                     <FontAwesomeIcon
                         icon={faClose}
