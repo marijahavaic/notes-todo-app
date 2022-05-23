@@ -200,10 +200,8 @@ function App() {
                     />
                 )}
                 <NotesList
-                    notes={notes.filter((note) => {
-                        note.text.toLowerCase().includes(searchText) ||
-                            note.title.toLowerCase().includes(searchText);
-                    })}
+                    notes={notes}
+                    searchText={searchText}
                     handleAddNote={addNote}
                     setNotes={setNotes}
                     handleEditNote={editNote}
