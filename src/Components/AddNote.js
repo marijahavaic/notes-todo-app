@@ -2,10 +2,12 @@ import { useState } from "react";
 
 import "../Style/Note.css";
 
+import useTitleState from "../Hooks/useTitleState";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClose } from "@fortawesome/free-solid-svg-icons";
 
-const AddNote = ({ newNote, handleAddNote, handleCloseNewNote }) => {
+const AddNote = ({ handleAddNote, handleCloseNewNote }) => {
     const [noteTitle, setNoteTitle] = useState("");
     const [noteText, setNoteText] = useState("");
 
