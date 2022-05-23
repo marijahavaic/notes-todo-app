@@ -8,6 +8,7 @@ const TaskList = ({
     handleCompleted,
     handleDeleteTask,
     isEditing,
+    searchText,
 }) => {
     return (
         <div className="TaskList">

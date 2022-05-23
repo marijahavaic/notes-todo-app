@@ -24,6 +24,7 @@ const Todo = ({
     newTasks,
     setNewTasks,
     setTasks,
+    searchText,
 }) => {
     const [isEditing, setIsEditing] = useState(false);
     const [editTitle, setEditTitle] = useState(title);

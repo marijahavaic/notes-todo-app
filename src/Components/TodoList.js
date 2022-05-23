@@ -19,11 +19,11 @@ const TodoList = ({
         <div className="Grid-container">
             {todos
                 .filter(
-                    (todo) =>
-                        todo.title.toLowerCase().includes(searchText) ||
-                        // todo.tasks.some((task) => {
-                        //     task.toLowerCase().includes(searchText);
-                        // })
+                    (todo) => todo.title.toLowerCase().includes(searchText)
+                    // ||
+                    // todo.tasks.every((task) => {
+                    //     task.text.toLowerCase().includes(searchText);
+                    // })
                 )
                 .map((todo) => (
                     <Todo
@@ -38,6 +38,7 @@ const TodoList = ({
                         setNewTasks={setNewTasks}
                         setTasks={setTasks}
                         handleCheckTask={handleCheckTask}
+                        searchText={searchText}
                     />
                 ))}
         </div>
