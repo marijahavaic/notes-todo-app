@@ -23,8 +23,8 @@ function App() {
         notes,
         setNotes,
         addNote,
-        editNote,
-        deleteNote,
+        // editNote,
+        // deleteNote,
         addNoteComponent,
         removeNoteComponent,
     } = useNoteState("");
@@ -165,18 +165,18 @@ function App() {
                 {newNote && (
                     <AddNote
                         handleAddNote={addNote}
-                        newNote={newNote}
+                        // newNote={newNote}
                         handleCloseNewNote={removeNoteComponent}
                     />
                 )}
                 <NotesList
-                    notes={notes}
+                    // notes={notes}
                     searchText={searchText}
-                    handleAddNote={addNote}
-                    // setNotes={setNotes}
-                    handleEditNote={editNote}
-                    handleDeleteNote={deleteNote}
-                    newNote={newNote}
+                    // handleAddNote={addNote}
+                    // // setNotes={setNotes}
+                    // handleEditNote={editNote}
+                    // handleDeleteNote={deleteNote}
+                    // newNote={newNote}
                 />
             </div>
         </div>

@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import "../Style/Note.css";
 
+import useNoteState from "../Hooks/useNoteState";
 import useTitleState from "../Hooks/useTitleState";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -26,7 +27,6 @@ const AddNote = ({ handleAddNote, handleCloseNewNote }) => {
             setNoteText("");
         }
     };
-
     return (
         <div className="NewNoteBg">
             <div className="Note NewNote">

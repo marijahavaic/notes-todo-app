@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import useNoteState from "../Hooks/useNoteState";
+
 import "../Style/Note.css";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -8,9 +10,12 @@ import {
     faTrashCan,
     faClose,
 } from "@fortawesome/free-solid-svg-icons";
+
 import EditTextNote from "./EditTextNote";
 
-const Note = ({ id, title, text, handleDeleteNote, handleEditNote }) => {
+const Note = ({ id, title, text }) => {
+    // Notes
+    const { editNote, deleteNote } = useNoteState("");
     const [isEditing, setIsEditing] = useState(false);
     const [editTitle, setEditTitle] = useState(title);
     const [editText, setEditText] = useState(text);
@@ -29,7 +34,7 @@ const Note = ({ id, title, text, handleDeleteNote, handleEditNote }) => {
     const handleSaveEditClick = () => {
         // check if the note isn't empty
         if (editText.trim().length > 0 || editTitle.trim().length > 0) {
-            handleEditNote(id, editTitle, editText);
+            editNote(id, editTitle, editText);
             setEditTitle(editTitle);
             setEditText(editText);
             setIsEditing(false);
@@ -44,7 +49,7 @@ const Note = ({ id, title, text, handleDeleteNote, handleEditNote }) => {
         setIsEditing(false);
     };
 
-    const editNote = (
+    const noteEditing = (
         <div className="NewNoteBg">
             <div className="Note NewNote">
                 <div className="NoteHeader">
@@ -87,7 +92,7 @@ const Note = ({ id, title, text, handleDeleteNote, handleEditNote }) => {
                         className="Icon"
                     />
                     <FontAwesomeIcon
-                        onClick={() => handleDeleteNote(id)}
+                        onClick={() => deleteNote(id)}
                         icon={faTrashCan}
                         className="Icon"
                     />
@@ -99,7 +104,7 @@ const Note = ({ id, title, text, handleDeleteNote, handleEditNote }) => {
         </div>
     );
 
-    return <>{isEditing ? editNote : viewNote}</>;
+    return <>{isEditing ? noteEditing : viewNote}</>;
 };
 
 export default Note;

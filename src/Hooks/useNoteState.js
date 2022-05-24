@@ -1,9 +1,9 @@
-import React, { useContext, useState } from "react";
+import { useContext, useState } from "react";
 import { nanoid } from "nanoid";
 
 import { NotesListContext } from "../Components/NotesListContext";
 
-export default (initialTodos) => {
+export default () => {
     // Notes
     const [newNote, setNewNotes] = useState(false);
     const [notes, setNotes] = useContext(NotesListContext);
@@ -35,7 +35,7 @@ export default (initialTodos) => {
     };
 
     const addNoteComponent = (e) => {
-        setNewNotes(!newNote);
+        setNewNotes(true);
     };
 
     const removeNoteComponent = () => {

@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 
 import Note from "./Note";
 
@@ -6,15 +6,11 @@ import Note from "./Note";
 
 import "../Style/NotesList.css";
 
-import { NotesListContext } from "./NotesListContext";
+import useNoteState from "../Hooks/useNoteState";
 
-const NotesList = ({
-    handleDeleteNote,
-    handleEditNote,
-    handleCloseEdit,
-    searchText,
-}) => {
-    const [notes] = useContext(NotesListContext);
+const NotesList = ({ searchText }) => {
+    // Notes
+    const { notes } = useNoteState("");
     return (
         <div className="Grid-container">
             {notes
@@ -33,9 +29,6 @@ const NotesList = ({
                         id={note.id}
                         title={note.title}
                         text={note.text}
-                        handleDeleteNote={handleDeleteNote}
-                        handleEditNote={handleEditNote}
-                        handleCloseEdit={handleCloseEdit}
                     />
                 ))}
         </div>
