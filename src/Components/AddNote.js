@@ -2,7 +2,6 @@ import { useState } from "react";
 
 import "../Style/Note.css";
 
-import useNoteState from "../Hooks/useNoteState";
 import useTitleState from "../Hooks/useTitleState";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
