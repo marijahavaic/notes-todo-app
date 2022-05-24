@@ -1,5 +1,7 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useState } from "react";
 import { nanoid } from "nanoid";
+
+import useNoteState from "./Hooks/useNoteState";
 
 import "./App.css";
 import NotesList from "./Components/NotesList";
@@ -9,16 +11,23 @@ import AddNote from "./Components/AddNote";
 import Header from "./Components/Header";
 import TodoList from "./Components/TodoList";
 
-import { NotesListContext } from "./Components/NotesListContext";
-
 function App() {
     // Dark Mode
     const [darkMode, setDarkMode] = useState(false);
     // Search notes and todos
     const [searchText, setSearchText] = useState("");
+
     // Notes
-    const [newNote, setNewNotes] = useState(false);
-    const [notes, setNotes] = useContext(NotesListContext);
+    const {
+        newNote,
+        notes,
+        setNotes,
+        addNote,
+        editNote,
+        deleteNote,
+        addNoteComponent,
+        removeNoteComponent,
+    } = useNoteState("");
 
     // Todos
     const [newTodo, setNewTodos] = useState(false);
@@ -74,27 +83,6 @@ function App() {
         localStorage.setItem("react-todos-app-data", JSON.stringify(todos));
     }, [todos]); // [todos] Only re-run the effect if notes changes
 
-    const addNote = (title, text) => {
-        const newNote = {
-            id: nanoid(),
-            title: title,
-            text: text,
-        };
-        const newNotes = [newNote, ...notes];
-        setNotes(newNotes);
-        setNewNotes(false);
-    };
-
-    const editNote = (id, title, text) => {
-        const updatedNotes = notes.map((note) => {
-            if (note.id === id) {
-                return { ...note, title, text };
-            }
-            return note;
-        });
-        setNotes(updatedNotes);
-    };
-
     const addTodo = (title, newTasks) => {
         const newTodo = {
             id: nanoid(),
@@ -116,18 +104,9 @@ function App() {
         setTodos(updatedTodos);
     };
 
-    const addNoteComponent = (e) => {
-        setNewNotes(!newNote);
-    };
-
     const addTodoComponent = (e) => {
         setNewTodos(!newTodo);
         setNewTasks([]);
-    };
-
-    const deleteNote = (id) => {
-        const newNotes = notes.filter((note) => note.id !== id);
-        setNotes(newNotes);
     };
 
     const deleteTodo = (id) => {
@@ -138,10 +117,6 @@ function App() {
     const deleteTask = (id) => {
         const newTasksArr = newTasks.filter((task) => task.id !== id);
         setNewTasks(newTasksArr);
-    };
-
-    const closeNewNote = () => {
-        setNewNotes(false);
     };
 
     const closeNewTodo = () => {
@@ -191,14 +166,14 @@ function App() {
                     <AddNote
                         handleAddNote={addNote}
                         newNote={newNote}
-                        handleCloseNewNote={closeNewNote}
+                        handleCloseNewNote={removeNoteComponent}
                     />
                 )}
                 <NotesList
                     notes={notes}
                     searchText={searchText}
                     handleAddNote={addNote}
-                    setNotes={setNotes}
+                    // setNotes={setNotes}
                     handleEditNote={editNote}
                     handleDeleteNote={deleteNote}
                     newNote={newNote}
