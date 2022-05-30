@@ -45,5 +45,5 @@ npm start
 ### Known Issues
 
 - Add/Edit Note or Todo doesn’t close on the outside of a note/todo
-- Repeated code in AddTodo.js
+- Mobile version has an issue with keyboard covering save button
 - Search doesn’t work for tasks
